@@ -1,0 +1,166 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { CiLinkedin } from "react-icons/ci";
+import { LuInstagram, LuMenu, LuX } from "react-icons/lu";
+import { PiFacebookLogo } from "react-icons/pi";
+import { TbBrandTiktok } from "react-icons/tb";
+
+import BrandMark from "@/components/layout/BrandMark";
+import { businessInfo } from "@/constants/data";
+
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com", Icon: LuInstagram },
+  { label: "TikTok", href: "https://www.tiktok.com", Icon: TbBrandTiktok },
+  { label: "Facebook", href: "https://www.facebook.com", Icon: PiFacebookLogo },
+  { label: "LinkedIn", href: "https://www.linkedin.com", Icon: CiLinkedin },
+];
+
+const mainLinks = [
+  { number: "01", label: "Home", href: "/" },
+  { number: "02", label: "Menu", href: "/menu" },
+  { number: "03", label: "About", href: "/about" },
+  { number: "04", label: "Contact", href: "/contact" },
+];
+
+const legalLinks = [
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Cookie Policy", href: "/cookies" },
+];
+
+export default function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
+
+  return (
+    <nav aria-label="Site" className="sticky top-0 z-50 w-full bg-cream">
+      <header className="mx-auto grid h-20 w-full max-w-368 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center px-8">
+        {/* Social links: desktop and laptop only */}
+        <ul
+          className="hidden items-center gap-2 tablet:flex"
+          aria-label="Social media"
+        >
+          {socialLinks.map(({ label, href, Icon }) => (
+            <li key={label}>
+              <Link
+                href={href}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-green text-cream transition-colors hover:bg-green-soft"
+              >
+                <Icon className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Centered logo */}
+        <div className="col-start-1 justify-self-start tablet:col-start-2 desktop:justify-self-center">
+          <BrandMark />
+        </div>
+
+        {/* Menu */}
+        <button
+          type="button"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="site-menu"
+          onClick={() => setIsMenuOpen((open) => !open)}
+          className="col-start-3 row-start-1 flex h-12 w-12 items-center justify-center justify-self-end rounded-xl text-green transition-colors hover:bg-green/5"
+        >
+          {isMenuOpen ? (
+            <LuX className="h-8 w-8" aria-hidden="true" />
+          ) : (
+            <LuMenu className="h-8 w-8" aria-hidden="true" />
+          )}
+        </button>
+      </header>
+
+      {/* Expandable menu */}
+
+      {isMenuOpen && (
+        <div
+          id="site-menu"
+          className="absolute inset-x-0 top-20 z-10 flex-col items-center justify-center border-t border-green-wash bg-cream shadow-[0_18px_28px_rgb(8_47_27/8%)]"
+        >
+          <div className="relative mx-auto flex h-min w-full min-w-0 max-w-368 flex-col items-start gap-10 p-6 tablet:p-8">
+            <ul className="relative flex h-min w-full flex-col gap-1">
+              {mainLinks.map(({ number, label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    aria-current={pathname === href ? "page" : undefined}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-end gap-3"
+                  >
+                    <span
+                      className={`text-[10px] font-normal leading-[1.4em] ${
+                        pathname === href
+                          ? "text-green"
+                          : "text-green-muted hover:text-green"
+                      }`}
+                    >
+                      {number}
+                    </span>
+
+                    <span
+                      className={`text-3xl font-extrabold uppercase leading-[1.05em] tracking-[-0.02em] ${
+                        pathname === href
+                          ? "text-green"
+                          : "text-green-muted hover:text-green"
+                      }`}
+                    >
+                      {label}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-end justify-between w-full pt-5 border-t border-green/15">
+              <address className="flex flex-col justify-end">
+                <a
+                  href={businessInfo.phoneLink}
+                  className="font-onest font-semibold text-green-muted hover:text-green transition-colors mb-1 text-sm"
+                >
+                  {businessInfo.phone}
+                </a>
+                <span className="text-green-text-muted text-xs font-onest ">
+                  {businessInfo.address}
+                </span>
+              </address>
+
+              <ul
+                aria-label="Legal"
+                className="flex flex-wrap gap-x-4 gap-y-2 tablet:justify-end tablet:gap-x-6"
+              >
+                {legalLinks.map(({ label, href }) => (
+                  <li key={href}>
+                    <Link href={href} className="text-green-text-muted text-xs">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}

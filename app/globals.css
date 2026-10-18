@@ -1,26 +1,227 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-tablet: 810px;
+  --breakpoint-desktop: 1220px;
+
+  --font-oswald: var(--font-oswald);
+  --font-onest: var(--font-onest);
+
+  --color-cream: #f9efe5;
+  --color-cream-deep: #f1e2d0;
+  --color-cream-muted: #e6d5c0;
+
+  --color-green: #0e4a2b;
+  --color-green-deep: #082f1b;
+  --color-green-soft: #1c6b41;
+  --color-green-muted: #5c8a70;
+
+  --color-ink: #17251d;
+  --color-accent: #a9762f;
+
+  --color-green-text-muted: #0e4a2b99;
+  --color-green-text-subtle: #0e4a2bcc;
+  --color-green-rule: #0e4a2b66;
+  --color-green-wash: #0e4a2b1a;
+
+  --color-cream-text-muted: #f9efe5a6;
+  --color-cream-rule: #f9efe5;
+}
+
+/* Global styles */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  background: var(--color-cream);
+  color: var(--color-green);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background: var(--color-cream);
+  color: var(--color-green);
+  font-family: var(--font-onest), sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Typography utilities */
+
+@utility display-xl {
+  @apply font-oswald text-green desktop:text-[92px] tablet:text-6xl text-[clamp(2rem,10vw,3rem)] leading-[1.02em] tracking-[0.01em] font-semibold uppercase;
+}
+
+@utility heading-1 {
+  @apply font-oswald text-green text-7xl leading-none font-semibold;
+}
+
+@utility heading-2 {
+  @apply font-oswald text-green desktop:text-5xl tablet:text-[38px] text-4xl leading-[1em] tracking-[0.01em] font-semibold uppercase;
+}
+
+@utility heading-3 {
+  @apply font-oswald text-green text-2xl leading-[1.2] font-semibold;
+}
+
+@utility heading-4 {
+  @apply font-onest text-green desktop:text-lg tablet:text-sm text-base leading-[1.4] tracking-[-0.04em] font-semibold capitalize;
+}
+
+@utility body {
+  @apply font-onest text-green-text-muted text-base leading-[1.6];
+}
+
+@utility paragraph {
+  @apply w-full whitespace-normal wrap-break-word font-onest tablet:text-lg text-base leading-[2em] text-green-text-subtle;
+}
+
+@utility home-hero-meta-label {
+  @apply text-sm font-extrabold tracking-tight leading-[1.05em] uppercase;
+}
+
+@utility home-hero-meta-value {
+  @apply text-sm leading-[1.4em] text-green-text-muted;
+}
+
+@utility body-small {
+  @apply font-onest text-green-text-muted desktop:text-sm text-[11px] leading-[1.6];
+}
+
+@utility quote {
+  @apply font-onest text-green-text-subtle text-base leading-loose;
+}
+
+@utility attribution {
+  @apply font-onest text-green-text-subtle text-base font-semibold leading-[1.4];
+}
+
+@utility eyebrow {
+  @apply font-onest text-green-text-muted text-xs font-semibold leading-[1.4];
+}
+
+@utility micro-label {
+  @apply font-onest text-green-text-muted text-[11px] font-normal leading-[1.4];
+}
+
+@utility price {
+  @apply font-onest text-accent text-[20px] font-semibold leading-[1.2];
+}
+
+@utility salt-value {
+  @apply font-onest text-accent text-5xl font-semibold leading-[1.1];
+}
+
+@utility button-label {
+  @apply font-onest text-cream text-[14px] font-normal leading-none;
+}
+
+@utility word-mark {
+  @apply font-onest text-green text-2xl font-extrabold leading-[1.1];
+}
+
+@utility button-label-small {
+  @apply font-onest text-cream text-[13px] font-normal leading-none;
+}
+
+@utility button-label-large {
+  @apply font-onest text-cream text-[16px] font-normal leading-none;
+}
+
+.intro-shutter {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  color: var(--color-cream);
+  pointer-events: none;
+}
+
+.intro-shutter__panel {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--color-green);
+}
+
+.intro-shutter__panel--top {
+  top: 0;
+  display: grid;
+  place-items: center;
+}
+
+.intro-shutter__panel--bottom {
+  bottom: 0;
+}
+
+.intro-shutter__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.intro-shutter__name {
+  font-family: var(--font-onest), sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.intro-shutter__tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-onest), sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.intro-shutter__tagline span {
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .intro-shutter {
+    display: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
 }
