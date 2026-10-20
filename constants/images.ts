@@ -40,3 +40,9 @@ export const homeGallery = {
   image5: "/home/gallery/image-5.avif",
   beanGroup: "/home/beans-group-2.avif",
 };
+
+//* About
+
+export const aboutSections = {
+  ourStory: "/about/aboutStory.avif",
+};

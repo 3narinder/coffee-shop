@@ -15,9 +15,9 @@ const Address = () => {
       contentClassName="max-w-6xl"
       className="px-6 tablet:px-8"
     >
-      <div className="grid w-full max-w-5xl grid-cols-1 gap-5 pt-8 tablet:grid-cols-3">
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-4 pt-4 tablet:grid-cols-3">
         <ContactCard
-          icon={<MapPin size={24} strokeWidth={1.8} />}
+          icon={<MapPin size={18} strokeWidth={1.8} />}
           heading={visit.addressLabel}
           content={
             <a
@@ -32,7 +32,7 @@ const Address = () => {
         />
 
         <ContactCard
-          icon={<Phone size={24} strokeWidth={1.8} />}
+          icon={<Phone size={18} strokeWidth={1.8} />}
           heading={visit.phoneLabel}
           content={
             <a
@@ -45,7 +45,7 @@ const Address = () => {
         />
 
         <ContactCard
-          icon={<Clock size={24} strokeWidth={1.8} />}
+          icon={<Clock size={18} strokeWidth={1.8} />}
           heading={visit.hoursLabel}
           content={<>{businessInfo.openingHoursShort}</>}
         />

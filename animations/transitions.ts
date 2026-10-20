@@ -6,15 +6,15 @@ export const sectionRevealTransition: Transition = {
 };
 
 export const shutterTransition: Transition = {
-  duration: 2.2,
-  delay: 0.6,
+  duration: 2,
+  delay: 0.4,
   ease: [0.76, 0, 0.24, 1],
 };
 
 export const shutterFadeTransition: Transition = {
-  duration: 2.2,
+  duration: 2,
   delay: 0.6,
-  times: [0, 0.84, 1],
+  times: [0, 0.8, 1],
   ease: "linear",
 };
 

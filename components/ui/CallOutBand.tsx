@@ -1,8 +1,8 @@
 import { homeCallout } from "@/constants/images";
 import RevealSection from "@/components/animation/RevealSection";
-import { homePageContent } from "@/constants/data";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { homePageContent } from "@/constants/data";
 
 const CallOutBand = () => {
   return (

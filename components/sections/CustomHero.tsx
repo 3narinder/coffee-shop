@@ -1,0 +1,95 @@
+import Image from "next/image";
+import { homeStory } from "@/constants/images";
+import SectionLayout from "@/components/layout/SectionLayout";
+import { ReactNode } from "react";
+
+type DecorativeImage = {
+  src: string;
+  alt?: string;
+  className: string;
+  width?: number;
+  height?: number;
+};
+
+type HeroProps = {
+  subTitle?: string;
+  title: string;
+  description?: string;
+  className?: string;
+  decorativeImages?: DecorativeImage[];
+  paddingClassName?: string;
+  component?: ReactNode;
+};
+
+const CustomHero = ({
+  subTitle,
+  title,
+  description,
+  className = "",
+  decorativeImages = [],
+  paddingClassName = "py-20 tablet:py-28 desktop:py-28",
+  component,
+}: HeroProps) => {
+  return (
+    <SectionLayout paddingClassName={paddingClassName}>
+      {/* Decorative images */}
+      {decorativeImages.map((image, index) => (
+        <div
+          key={index}
+          className={`pointer-events-none absolute z-0 ${image.className} mix-blend-multiply`}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt ?? ""}
+            width={image.width ?? 300}
+            height={image.height ?? 300}
+            className="h-auto w-full object-contain"
+          />
+        </div>
+      ))}
+
+      {/* Hero content */}
+      <div
+        className={`relative z-10 flex w-full flex-col items-center gap-6 ${className}`}
+      >
+        <div className="flex flex-col items-center justify-center gap-4">
+          {subTitle && (
+            <p className="text-xs font-semibold tracking-[0.18em] leading-[1.4em] uppercase text-[#0e4a2b8c]">
+              {subTitle}
+            </p>
+          )}
+
+          <h1 className="heading-1 w-full text-center">{title}</h1>
+        </div>
+
+        {/* Decorative divider */}
+        <div className="flex items-center justify-center gap-4">
+          <div className="h-px w-20 shrink-0 bg-green-rule" />
+
+          <div className="h-6 w-6 shrink-0 rotate-[-18deg]">
+            <Image
+              src={homeStory.SectionHeadingBean}
+              width={24}
+              height={24}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-contain"
+            />
+          </div>
+
+          <div className="h-px w-20 shrink-0 bg-green-rule" />
+        </div>
+
+        {description && (
+          <p className="w-full max-w-xl text-center font-onest text-sm font-normal leading-[1.625em] tracking-[-0.02em] text-green-text-muted tablet:text-[13px] desktop:text-[16px]">
+            {description}
+          </p>
+        )}
+      </div>
+
+      {component && <div className="relative z-10 w-full">{component}</div>}
+    </SectionLayout>
+  );
+};
+
+export default CustomHero;

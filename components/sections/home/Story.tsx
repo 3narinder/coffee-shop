@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SectionLayout from "@/components/layout/SectionLayout";
-import { homePageContent } from "@/constants/data";
 import { homeStory } from "@/constants/images";
+import { homePageContent } from "@/constants/data";
 
 const Story = () => {
   const { story } = homePageContent;

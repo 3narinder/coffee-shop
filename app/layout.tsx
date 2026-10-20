@@ -20,6 +20,9 @@ const onest = Onest({
 export const metadata: Metadata = {
   title: businessInfo.pageTitle,
   description: businessInfo.pageDescription,
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

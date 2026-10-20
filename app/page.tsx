@@ -4,7 +4,7 @@ import Gallery from "@/components/sections/home/Gallery";
 import Hero from "@/components/sections/home/Hero";
 import Special from "@/components/sections/home/Special";
 import Story from "@/components/sections/home/Story";
-import Testimony from "@/components/sections/Testimony";
+import Testimony from "@/components/sections/Testimoney";
 
 import CallOutBand from "@/components/ui/CallOutBand";
 

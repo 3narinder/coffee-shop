@@ -3,7 +3,8 @@ import type { MenuItemData } from "@/constants/types";
 
 export const businessInfo = {
   name: "Common Grounds",
-  description: "Coffee, breakfast and a place to sit, seven days a week on West 44th.",
+  description:
+    "Coffee, breakfast and a place to sit, seven days a week on West 44th.",
   address: "112 W 44th St, New York, NY 10036",
   mapUrl: "https://maps.google.com/?q=112+W+44th+St,+New+York,+NY+10036",
   phone: "(212) 555-0148",
@@ -228,3 +229,30 @@ export const testimonials = [
     name: "Nia Robertson",
   },
 ];
+
+// ******************************************************** //
+//***** MENU PAGE CONTENT
+// ******************************************************** //
+
+export const menuNav = [
+  { label: "Espresso", id: "espresso" },
+  { label: "Americano", id: "americano" },
+  { label: "Cappuccino", id: "cappuccino" },
+  { label: "Latte", id: "latte" },
+  { label: "Mocha", id: "mocha" },
+  { label: "Flat White", id: "flat-white" },
+  { label: "Macchiato", id: "macchiato" },
+  { label: "Cold Coffee", id: "cold-coffee" },
+  { label: "Iced Latte", id: "iced-latte" },
+  { label: "Frappes", id: "frappes" },
+  { label: "Tea", id: "tea" },
+  { label: "Hot Chocolate", id: "hot-chocolate" },
+];
+
+export const menuPageContent = {
+  hero: {
+    headingLines: ["A Great morning", "starts with"],
+    hoursLabel: "Opening Hours",
+    addressLabel: "Find us at",
+  },
+};

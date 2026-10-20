@@ -68,7 +68,7 @@ button:focus-visible {
 }
 
 @utility heading-1 {
-  @apply font-oswald text-green text-7xl leading-none font-semibold;
+  @apply font-oswald text-green desktop:text-7xl tablet:text-[60px] text-[48px] leading-[1em] tracking-[0.01em] font-semibold uppercase;
 }
 
 @utility heading-2 {
@@ -123,8 +123,8 @@ button:focus-visible {
   @apply font-onest text-accent text-[20px] font-semibold leading-[1.2];
 }
 
-@utility salt-value {
-  @apply font-onest text-accent text-5xl font-semibold leading-[1.1];
+@utility stat-value {
+  @apply font-oswald text-accent text-5xl font-semibold leading-[1.1];
 }
 
 @utility button-label {
@@ -163,7 +163,7 @@ button:focus-visible {
 .intro-shutter__panel--top {
   top: 0;
   display: grid;
-  place-items: center;
+  place-items: end center;
 }
 
 .intro-shutter__panel--bottom {
@@ -175,6 +175,7 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  padding-bottom: 4px;
 }
 
 .intro-shutter__name {
@@ -223,5 +224,4 @@ button:focus-visible {
   *::after {
     transition-duration: 0.01ms !important;
   }
-
 }

@@ -1,5 +1,6 @@
 import MenuSection from "@/components/ui/MenuSection";
 import { homePageContent, specialItems } from "@/constants/data";
+
 import { homeSpecial } from "@/constants/images";
 
 const Special = () => {
