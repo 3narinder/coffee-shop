@@ -1,18 +1,6 @@
-import type { ReactNode } from "react";
 import RevealSection from "@/components/animation/RevealSection";
 import SectionHeading from "@/components/ui/SectionHeading";
-
-type SectionLayoutProps = {
-  title?: string;
-  children: ReactNode;
-  id?: string;
-  className?: string;
-  contentClassName?: string;
-  headingClassName?: string;
-  showHeading?: boolean;
-  description?: string;
-  paddingClassName?: string;
-};
+import type { SectionLayoutProps } from "@/constants/types";
 
 const SectionLayout = ({
   title,

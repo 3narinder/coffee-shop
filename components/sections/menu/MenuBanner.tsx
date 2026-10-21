@@ -1,19 +1,13 @@
 import RevealSection from "@/components/animation/RevealSection";
-import React from "react";
+import type { MenuBannerProps } from "@/constants/types";
 
-interface MenuBarProp {
-  title: string;
-  description: string;
-}
-
-const MenuBanner = ({ title, description }: MenuBarProp) => {
+const MenuBanner = ({ title, description }: MenuBannerProps) => {
   return (
     <RevealSection
       className={`relative z-10 flex w-full flex-col items-center overflow-x-clip scroll-mt-24 `}
     >
       <div
-        id="bar-banner"
-        className="bg-green py-14 h-min flex flex-col items-center place-content-center w-full"
+        className="flex h-min w-full flex-col items-center place-content-center bg-green py-14"
       >
         <div className="flex flex-col px-8 w-full h-min gap-3 items-center">
           <h2 className="text-3xl font-semibold font-oswald text-center uppercase text-cream tracking-[0.2em]">

@@ -1,8 +1,7 @@
-import { homeCallout } from "@/constants/images";
 import RevealSection from "@/components/animation/RevealSection";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-import { homePageContent } from "@/constants/data";
+import { homePageContent, pageImages } from "@/constants/data";
 
 const CallOutBand = () => {
   return (
@@ -18,7 +17,7 @@ const CallOutBand = () => {
 
             <Button
               label={homePageContent.callout.buttonLabel}
-              href="/menu"
+              href={homePageContent.callout.buttonHref}
               className="border-0 bg-cream px-8 py-4.5 text-green hover:bg-cream-deep hover:text-green"
             />
           </div>
@@ -27,20 +26,20 @@ const CallOutBand = () => {
 
       <div className="desktop:flex hidden absolute top-9.5 -bottom-7 left-6 z-10 w-68 aspect-[.75] rotate-[-5deg]">
         <Image
-          src={homeCallout.homeCallout1}
+          src={pageImages.homeCallout.homeCallout1}
           width={680}
           height={1000}
-          alt="Callout image 1"
+          alt={homePageContent.callout.imageAlts[0]}
           className="h-full w-full rounded-4xl object-cover object-center"
         />
       </div>
 
       <div className="desktop:flex hidden  absolute top-9.5 -bottom-7 right-6 z-10 w-68 aspect-[.75] rotate-[4deg]">
         <Image
-          src={homeCallout.homeCallout2}
+          src={pageImages.homeCallout.homeCallout2}
           width={680}
           height={1000}
-          alt="Callout image 1"
+          alt={homePageContent.callout.imageAlts[1]}
           className="h-full w-full rounded-4xl object-cover object-center"
         />
       </div>

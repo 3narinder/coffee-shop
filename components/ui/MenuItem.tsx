@@ -1,11 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { MenuItemData } from "@/constants/types";
-
-type MenuItemProps = {
-  item: MenuItemData;
-  href?: string;
-};
+import type { MenuItemProps } from "@/constants/types";
 
 const MenuItem = ({ item, href = "/" }: MenuItemProps) => {
   // Choose the value based on the item type
@@ -20,7 +15,7 @@ const MenuItem = ({ item, href = "/" }: MenuItemProps) => {
         <div className="aspect-[0.97/1] h-auto w-full">
           <Image
             src={item.image}
-            alt={item.name}
+            alt={item.imageAlt}
             width={100}
             height={100}
             className="block h-full w-full object-cover object-center"

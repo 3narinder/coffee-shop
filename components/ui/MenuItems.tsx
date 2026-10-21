@@ -1,11 +1,5 @@
 import MenuItem from "./MenuItem";
-import type { MenuItemData } from "@/constants/types";
-
-type MenuItemsProps = {
-  items: MenuItemData[];
-  columns?: 1 | 2;
-  itemHref?: string;
-};
+import type { MenuItemsProps } from "@/constants/types";
 
 const MenuItems = ({ items, columns = 2, itemHref = "/" }: MenuItemsProps) => {
   const midpoint = Math.ceil(items.length / 2);

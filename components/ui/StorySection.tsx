@@ -1,15 +1,6 @@
 import Image from "next/image";
 import RevealSection from "@/components/animation/RevealSection";
-import type { StaticImageData } from "next/image";
-
-type StorySectionProps = {
-  image: string | StaticImageData;
-  imageAlt: string;
-  subheading: string;
-  heading: string;
-  paragraphs: [string, string, string];
-  reverseOnDesktop?: boolean;
-};
+import type { StorySectionProps } from "@/constants/types";
 
 const StorySection = ({
   image,

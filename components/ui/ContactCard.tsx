@@ -1,11 +1,4 @@
-import type { ReactNode } from "react";
-
-type ContactCardProps = {
-  icon: ReactNode;
-  heading: string;
-  content: ReactNode;
-  className?: string;
-};
+import type { ContactCardProps } from "@/constants/types";
 
 const ContactCard = ({
   icon,

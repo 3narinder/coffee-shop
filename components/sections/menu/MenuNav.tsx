@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useId } from "react";
-import { menuNav } from "@/constants/data";
+import { menuNav, menuPageContent } from "@/constants/data";
 
 import Button from "@/components/ui/Button";
 
@@ -21,7 +23,7 @@ const MenuNav = () => {
   };
   return (
     <nav
-      aria-label="Jump to menu section"
+      aria-label={menuPageContent.navigation.ariaLabel}
       className="w-full scroll-m-24 px-5 py-3 tablet:px-8 desktop:py-2"
     >
       {/* Desktop buttons */}
@@ -39,7 +41,7 @@ const MenuNav = () => {
       <div className="flex w-full tablet:justify-end justify-center desktop:hidden">
         <div className="relative h-12.5 w-full tablet:max-w-75 max-w-70">
           <label htmlFor={selectId} className="sr-only">
-            Jump to a Menu
+            {menuPageContent.navigation.selectLabel}
           </label>
 
           <select
@@ -49,7 +51,7 @@ const MenuNav = () => {
             className="h-full w-full cursor-pointer appearance-none rounded-full border border-green bg-cream pl-5 pr-12 text-[15px] font-semibold leading-[1em] outline-none capitalize"
           >
             <option value="" disabled>
-              Jump to a section
+              {menuPageContent.navigation.placeholder}
             </option>
 
             {menuNav.map((section) => (

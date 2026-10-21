@@ -1,11 +1,6 @@
 import Image from "next/image";
-import { homeStory } from "@/constants/images";
-
-type SectionHeadingProps = {
-  title: string;
-  description?: string;
-  className?: string;
-};
+import { pageImages } from "@/constants/data";
+import type { SectionHeadingProps } from "@/constants/types";
 
 const SectionHeading = ({
   title,
@@ -22,7 +17,7 @@ const SectionHeading = ({
 
         <div className="h-6 w-6 shrink-0 rotate-[-18deg]">
           <Image
-            src={homeStory.SectionHeadingBean}
+            src={pageImages.homeStory.SectionHeadingBean}
             width={24}
             height={24}
             alt=""

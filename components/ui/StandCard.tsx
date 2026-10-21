@@ -1,8 +1,4 @@
-type StandCardProps = {
-  number: string;
-  title: string;
-  description: string;
-};
+import type { StandCardProps } from "@/constants/types";
 
 const StandCard = ({ number, title, description }: StandCardProps) => {
   return (

@@ -1,11 +1,11 @@
 import { MapPin, Clock, Phone } from "lucide-react";
 
-import { businessInfo, homePageContent } from "@/constants/data";
+import { businessInfo, reusableContent } from "@/constants/data";
 import SectionLayout from "../layout/SectionLayout";
 import ContactCard from "../ui/ContactCard";
 
 const Address = () => {
-  const { visit } = homePageContent;
+  const { visit } = reusableContent;
 
   return (
     <SectionLayout

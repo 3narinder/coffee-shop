@@ -9,27 +9,14 @@ import { PiFacebookLogo } from "react-icons/pi";
 import { TbBrandTiktok } from "react-icons/tb";
 
 import BrandMark from "@/components/layout/BrandMark";
-import { businessInfo } from "@/constants/data";
+import { businessInfo, reusableContent } from "@/constants/data";
 
-const socialLinks = [
-  { label: "Instagram", href: "https://www.instagram.com", Icon: LuInstagram },
-  { label: "TikTok", href: "https://www.tiktok.com", Icon: TbBrandTiktok },
-  { label: "Facebook", href: "https://www.facebook.com", Icon: PiFacebookLogo },
-  { label: "LinkedIn", href: "https://www.linkedin.com", Icon: CiLinkedin },
-];
-
-const mainLinks = [
-  { number: "01", label: "Home", href: "/" },
-  { number: "02", label: "Menu", href: "/menu" },
-  { number: "03", label: "About", href: "/about" },
-  { number: "04", label: "Contact", href: "/contact" },
-];
-
-const legalLinks = [
-  { label: "Terms & Conditions", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Cookie Policy", href: "/cookies" },
-];
+const socialIcons = {
+  Instagram: LuInstagram,
+  TikTok: TbBrandTiktok,
+  Facebook: PiFacebookLogo,
+  LinkedIn: CiLinkedin,
+};
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,14 +34,20 @@ export default function NavBar() {
   }, [isMenuOpen]);
 
   return (
-    <nav aria-label="Site" className="sticky top-0 z-50 w-full bg-cream">
+    <nav
+      aria-label={reusableContent.siteNavigationLabel}
+      className="sticky top-0 z-50 w-full bg-cream"
+    >
       <header className="mx-auto grid h-20 w-full max-w-368 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center px-8">
         {/* Social links: desktop and laptop only */}
         <ul
           className="hidden items-center gap-2 tablet:flex"
-          aria-label="Social media"
+          aria-label={reusableContent.socialNavigationLabel}
         >
-          {socialLinks.map(({ label, href, Icon }) => (
+          {reusableContent.socialLinks.map(({ label, href }) => {
+            const Icon = socialIcons[label as keyof typeof socialIcons];
+
+            return (
             <li key={label}>
               <Link
                 href={href}
@@ -66,7 +59,8 @@ export default function NavBar() {
                 <Icon className="h-4 w-4" aria-hidden="true" />
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ul>
 
         {/* Centered logo */}
@@ -77,7 +71,11 @@ export default function NavBar() {
         {/* Menu */}
         <button
           type="button"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={
+            isMenuOpen
+              ? reusableContent.menuButtonLabels.close
+              : reusableContent.menuButtonLabels.open
+          }
           aria-expanded={isMenuOpen}
           aria-controls="site-menu"
           onClick={() => setIsMenuOpen((open) => !open)}
@@ -100,7 +98,10 @@ export default function NavBar() {
         >
           <div className="relative mx-auto flex h-min w-full min-w-0 max-w-368 flex-col items-start gap-10 p-6 tablet:p-8">
             <ul className="relative flex h-min w-full flex-col gap-1">
-              {mainLinks.map(({ number, label, href }) => (
+              {reusableContent.primaryNavigation.map(({ label, href }, index) => {
+                const number = String(index + 1).padStart(2, "0");
+
+                return (
                 <li key={href}>
                   <Link
                     href={href}
@@ -129,7 +130,8 @@ export default function NavBar() {
                     </span>
                   </Link>
                 </li>
-              ))}
+                );
+              })}
             </ul>
 
             <div className="flex items-end justify-between w-full pt-5 border-t border-green/15">
@@ -146,10 +148,10 @@ export default function NavBar() {
               </address>
 
               <ul
-                aria-label="Legal"
+                aria-label={reusableContent.legalNavigationLabel}
                 className="flex flex-wrap gap-x-4 gap-y-2 tablet:justify-end tablet:gap-x-6"
               >
-                {legalLinks.map(({ label, href }) => (
+                {reusableContent.legalNavigation.map(({ label, href }) => (
                   <li key={href}>
                     <Link href={href} className="text-green-text-muted text-xs">
                       {label}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import usePrefersReducedMotion from "@/components/animation/usePrefersReducedMotion";
+import { businessInfo } from "@/constants/data";
 import {
   shutterBottomVariants,
   shutterTopVariants,
@@ -24,10 +25,10 @@ export default function IntroShutter() {
         onAnimationComplete={() => setIsComplete(true)}
       >
         <div className="intro-shutter__brand">
-          <span className="intro-shutter__name">Common Grounds</span>
+          <span className="intro-shutter__name">{businessInfo.name}</span>
           <span className="intro-shutter__tagline">
             <span />
-            Coffee Co.
+            {businessInfo.brandDescriptor}
             <span />
           </span>
         </div>

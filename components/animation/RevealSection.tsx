@@ -1,10 +1,9 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import { sectionRevealVariants } from "@/animations/variants";
 import usePrefersReducedMotion from "@/components/animation/usePrefersReducedMotion";
-
-type RevealSectionProps = HTMLMotionProps<"section">;
+import type { RevealSectionProps } from "@/constants/types";
 
 export default function RevealSection({
   children,

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import SectionLayout from "@/components/layout/SectionLayout";
-import { homeStory } from "@/constants/images";
-import { homePageContent } from "@/constants/data";
+import { homePageContent, pageImages } from "@/constants/data";
 
 const Story = () => {
   const { story } = homePageContent;
@@ -20,8 +19,8 @@ const Story = () => {
       {/* Decorative image */}
       <div className="hidden tablet:flex z-0 pointer-events-none absolute desktop:-bottom-22.5 tablet:bottom-2 desktop:-right-22.5 tablet:right-2 desktop:h-80 tablet:h-52.5 desktop:w-80 tablet:w-52.5 ">
         <Image
-          src={homeStory.BlackCoffeeCupPlate}
-          alt="Black coffee cup and plate"
+          src={pageImages.homeStory.BlackCoffeeCupPlate}
+          alt={story.imageAlt}
           width={100}
           height={100}
           className="h-auto w-full object-cover object-center"

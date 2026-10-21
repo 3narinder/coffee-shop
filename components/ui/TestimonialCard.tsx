@@ -1,7 +1,4 @@
-type TestimonialCardProps = {
-  quote: string;
-  name: string;
-};
+import type { TestimonialCardProps } from "@/constants/types";
 
 const TestimonialCard = ({ quote, name }: TestimonialCardProps) => {
   return (

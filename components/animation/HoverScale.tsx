@@ -1,15 +1,11 @@
 "use client";
 
-import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { galleryHoverTransition } from "@/animations/transitions";
 import { galleryImageVariants } from "@/animations/variants";
 import usePrefersReducedMotion from "@/components/animation/usePrefersReducedMotion";
 
-type HoverScaleProps = {
-  children: ReactNode;
-  className: string;
-};
+import type { HoverScaleProps } from "@/constants/types";
 
 export default function HoverScale({ children, className }: HoverScaleProps) {
   const reduceMotion = usePrefersReducedMotion();

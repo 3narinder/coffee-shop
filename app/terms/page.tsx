@@ -1,7 +1,12 @@
-import React from "react";
+import type { Metadata } from "next";
+import PolicyPage from "@/components/sections/legal/PolicyPage";
+import { termsPageContent } from "@/constants/data";
 
-const page = () => {
-  return <div>Terms</div>;
+export const metadata: Metadata = {
+  title: termsPageContent.title,
+  description: termsPageContent.description,
 };
 
-export default page;
+export default function TermsPage() {
+  return <PolicyPage page={termsPageContent} />;
+}

@@ -6,12 +6,7 @@ import { floatingBeanVariants } from "@/animations/variants";
 import { floatingBeanTransition } from "@/animations/transitions";
 import usePrefersReducedMotion from "@/components/animation/usePrefersReducedMotion";
 
-type HeroBeanProps = {
-  src: string;
-  alt: string;
-  className: string;
-  delay?: number;
-};
+import type { HeroBeanProps } from "@/constants/types";
 
 const HeroBean = ({ src, alt, className, delay = 0 }: HeroBeanProps) => {
   const reduceMotion = usePrefersReducedMotion();

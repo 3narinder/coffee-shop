@@ -1,25 +1,7 @@
 import Image from "next/image";
-import { homeStory } from "@/constants/images";
+import { pageImages } from "@/constants/data";
 import SectionLayout from "@/components/layout/SectionLayout";
-import { ReactNode } from "react";
-
-type DecorativeImage = {
-  src: string;
-  alt?: string;
-  className: string;
-  width?: number;
-  height?: number;
-};
-
-type HeroProps = {
-  subTitle?: string;
-  title: string;
-  description?: string;
-  className?: string;
-  decorativeImages?: DecorativeImage[];
-  paddingClassName?: string;
-  component?: ReactNode;
-};
+import type { CustomHeroProps } from "@/constants/types";
 
 const CustomHero = ({
   subTitle,
@@ -29,7 +11,7 @@ const CustomHero = ({
   decorativeImages = [],
   paddingClassName = "py-20 tablet:py-28 desktop:py-28",
   component,
-}: HeroProps) => {
+}: CustomHeroProps) => {
   return (
     <SectionLayout paddingClassName={paddingClassName}>
       {/* Decorative images */}
@@ -68,7 +50,7 @@ const CustomHero = ({
 
           <div className="h-6 w-6 shrink-0 rotate-[-18deg]">
             <Image
-              src={homeStory.SectionHeadingBean}
+              src={pageImages.homeStory.SectionHeadingBean}
               width={24}
               height={24}
               alt=""

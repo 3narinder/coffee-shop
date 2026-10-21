@@ -2,15 +2,21 @@ import GoodToKnow from "@/components/sections/about/GoodToKnow";
 import Address from "@/components/sections/Address";
 import ContactForm from "@/components/sections/contact/ContactForm";
 import CustomHero from "@/components/sections/CustomHero";
-import React from "react";
+import { contactPageContent } from "@/constants/data";
+import type { Metadata } from "next";
 
-const page = () => {
+export const metadata: Metadata = {
+  title: contactPageContent.metadata.title,
+  description: contactPageContent.hero.description,
+};
+
+export default function ContactPage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center overflow-x-clip">
       <CustomHero
-        subTitle="contact"
-        title="come say hello"
-        description="Questions, bookings, private events or just a note about something you liked — we read all of it."
+        subTitle={contactPageContent.hero.subtitle}
+        title={contactPageContent.hero.title}
+        description={contactPageContent.hero.description}
       />
 
       <ContactForm />
@@ -20,6 +26,4 @@ const page = () => {
       <GoodToKnow />
     </div>
   );
-};
-
-export default page;
+}

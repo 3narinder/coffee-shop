@@ -80,14 +80,14 @@ const Testimony = () => {
       paddingClassName="px-6 py-16 tablet:px-8 tablet:py-28 desktop:py-28"
     >
       <section
-        aria-label="Customer testimonials"
+        aria-label={homePageContent.testimonials.carouselLabel}
         className="flex w-full items-center gap-3 pt-4 tablet:gap-5"
       >
         <button
           type="button"
           onClick={() => scrollCarousel(-1)}
           disabled={!canScrollLeft}
-          aria-label="Previous testimonials"
+          aria-label={homePageContent.testimonials.previousLabel}
           className={arrowButtonClass}
         >
           <span aria-hidden="true" className="text-xl leading-none">
@@ -99,7 +99,7 @@ const Testimony = () => {
           ref={carouselRef}
           tabIndex={0}
           role="region"
-          aria-label="Guest reviews carousel"
+          aria-label={homePageContent.testimonials.regionLabel}
           className="flex min-w-0 flex-1 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-4 scrollbar-none [&::-webkit-scrollbar]:hidden tablet:gap-5 desktop:gap-6"
         >
           {testimonials.map((testimonial) => (
@@ -115,7 +115,7 @@ const Testimony = () => {
           type="button"
           onClick={() => scrollCarousel(1)}
           disabled={!canScrollRight}
-          aria-label="Next testimonials"
+          aria-label={homePageContent.testimonials.nextLabel}
           className={arrowButtonClass}
         >
           <span aria-hidden="true" className="text-xl leading-none">

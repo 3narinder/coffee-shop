@@ -1,8 +1,9 @@
 import Image from "next/image";
 import HoverScale from "@/components/animation/HoverScale";
 import SectionLayout from "@/components/layout/SectionLayout";
-import { homePageContent } from "@/constants/data";
-import { homeGallery } from "@/constants/images";
+import { homePageContent, pageImages } from "@/constants/data";
+
+const { homeGallery } = pageImages;
 
 const Gallery = () => {
   return (
@@ -19,7 +20,7 @@ const Gallery = () => {
                   src={homeGallery.image1}
                   width={1400}
                   height={787}
-                  alt="Gallery image 1"
+                  alt={homePageContent.gallery.imageAlts[0]}
                   className="block h-full w-full rounded-[inherit] object-cover object-center"
                 />
               </HoverScale>
@@ -34,7 +35,7 @@ const Gallery = () => {
                   src={homeGallery.image2}
                   width={1400}
                   height={787}
-                  alt="Gallery image 2"
+                  alt={homePageContent.gallery.imageAlts[1]}
                   className="block h-full w-full rounded-[inherit] object-cover object-center"
                 />
               </HoverScale>
@@ -49,7 +50,7 @@ const Gallery = () => {
                   src={homeGallery.image3}
                   width={1400}
                   height={787}
-                  alt="Gallery image 2"
+                  alt={homePageContent.gallery.imageAlts[2]}
                   className="block h-full w-full rounded-[inherit] object-cover object-center"
                 />
               </HoverScale>
@@ -64,7 +65,7 @@ const Gallery = () => {
                   src={homeGallery.image4}
                   width={1400}
                   height={787}
-                  alt="Gallery image 2"
+                  alt={homePageContent.gallery.imageAlts[3]}
                   className="block h-full w-full rounded-[inherit] object-cover object-center"
                 />
               </HoverScale>
@@ -79,7 +80,7 @@ const Gallery = () => {
                   src={homeGallery.image5}
                   width={1400}
                   height={787}
-                  alt="Gallery image 2"
+                  alt={homePageContent.gallery.imageAlts[4]}
                   className="block h-full w-full rounded-[inherit] object-cover object-center"
                 />
               </HoverScale>
@@ -104,7 +105,7 @@ const Gallery = () => {
       <div className="pointer-events-none absolute z-0 hidden h-[263px] w-[416px] -bottom-[100px] -left-[158px] translate-y-[-77.03px] rotate-[-20deg] tablet:flex">
         <Image
           src={homeGallery.beanGroup}
-          alt="Decorative bean group"
+          alt={homePageContent.gallery.decorativeImageAlt}
           width={416}
           height={263}
           className="h-full w-full object-contain object-center"

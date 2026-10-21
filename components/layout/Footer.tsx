@@ -5,27 +5,14 @@ import { PiFacebookLogo } from "react-icons/pi";
 import { TbBrandTiktok } from "react-icons/tb";
 
 import BrandMark from "@/components/layout/BrandMark";
-import { businessInfo, homePageContent } from "@/constants/data";
+import { businessInfo, reusableContent } from "@/constants/data";
 
-const navigationLinks = [
-  { label: "Home", href: "/" },
-  { label: "Menu", href: "/menu" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-const socialLinks = [
-  { label: "Instagram", href: "https://www.instagram.com", Icon: LuInstagram },
-  { label: "TikTok", href: "https://www.tiktok.com", Icon: TbBrandTiktok },
-  { label: "Facebook", href: "https://www.facebook.com", Icon: PiFacebookLogo },
-  { label: "LinkedIn", href: "https://www.linkedin.com", Icon: CiLinkedin },
-];
-
-const legalLinks = [
-  { label: "Terms & Conditions", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Cookie Policy", href: "/cookies" },
-];
+const socialIcons = {
+  Instagram: LuInstagram,
+  TikTok: TbBrandTiktok,
+  Facebook: PiFacebookLogo,
+  LinkedIn: CiLinkedin,
+};
 
 export default function Footer() {
   return (
@@ -37,27 +24,31 @@ export default function Footer() {
             <BrandMark tone="light" />
 
             <p className="max-w-80 font-onest text-sm leading-relaxed text-cream-text-muted">
-              {homePageContent.footerDescription}
+              {reusableContent.footerDescription}
             </p>
 
             {/* Social links: desktop and laptop only */}
             <ul
-              aria-label="Social media"
+              aria-label={reusableContent.socialNavigationLabel}
               className="flex items-center gap-8 px-4"
             >
-              {socialLinks.map(({ label, href, Icon }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    aria-label={label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-cream transition-opacity hover:opacity-70"
-                  >
-                    <Icon className="h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </li>
-              ))}
+              {reusableContent.socialLinks.map(({ label, href }) => {
+                const Icon = socialIcons[label as keyof typeof socialIcons];
+
+                return (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      aria-label={label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-cream transition-opacity hover:opacity-70"
+                    >
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -65,11 +56,11 @@ export default function Footer() {
           <div className="flex flex-wrap items-start gap-16">
             <nav aria-label="Footer navigation">
               <h2 className="mb-4 font-oswald text-sm font-semibold uppercase leading-[1.4] tracking-[0.16em]">
-                Explore
+                {reusableContent.footerHeadings.explore}
               </h2>
 
               <ul className="grid gap-2 font-onest text-sm leading-[1.4] text-cream-text-muted">
-                {navigationLinks.map(({ label, href }) => (
+                {reusableContent.primaryNavigation.map(({ label, href }) => (
                   <li key={href}>
                     <Link
                       href={href}
@@ -84,7 +75,7 @@ export default function Footer() {
 
             <div className="w-44">
               <h2 className="mb-4 font-oswald text-sm font-semibold uppercase leading-[1.4] tracking-[0.16em]">
-                Visit
+                {reusableContent.footerHeadings.visit}
               </h2>
 
               <address className="flex max-w-64 flex-col gap-2 font-onest text-sm not-italic leading-[1.4] text-cream-text-muted">
@@ -113,12 +104,12 @@ export default function Footer() {
         {/* Copyright and legal links */}
         <div className="mt-12 flex flex-col-reverse items-center gap-4 border-t border-cream/25 pt-6 text-center font-onest text-xs leading-[1.4] text-cream/55 tablet:flex-row tablet:justify-between tablet:text-left">
           <p>
-            Copyright © {new Date().getFullYear()} Common Grounds. All rights
-            reserved.
+            Copyright © {new Date().getFullYear()} {businessInfo.name}.{" "}
+            {reusableContent.copyrightNotice}
           </p>
 
           <ul className="flex flex-wrap justify-center gap-x-5 gap-y-3">
-            {legalLinks.map(({ label, href }) => (
+            {reusableContent.legalNavigation.map(({ label, href }) => (
               <li key={href}>
                 <Link
                   href={href}

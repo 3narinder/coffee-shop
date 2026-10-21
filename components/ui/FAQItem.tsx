@@ -1,11 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-type FAQItemProps = {
-  question: string;
-  answer: string;
-};
+import type { FAQItemProps } from "@/constants/types";
 
 const FAQItem = ({ question, answer }: FAQItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
