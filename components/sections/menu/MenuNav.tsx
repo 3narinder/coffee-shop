@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useId } from "react";
-import { menuNav, menuPageContent } from "@/constants/data";
 
 import Button from "@/components/ui/Button";
+import { menuNav, menuPageContent } from "@/constants/data/menu";
 
 const MenuNav = () => {
   const selectId = useId();

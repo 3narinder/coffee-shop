@@ -1,6 +1,6 @@
 import SectionLayout from "@/components/layout/SectionLayout";
 import StandCard from "@/components/ui/StandCard";
-import { aboutPageContent } from "@/constants/data";
+import { aboutPageContent } from "@/constants/data/about";
 
 const OurStand = () => {
   return (

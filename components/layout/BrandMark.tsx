@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { businessInfo } from "@/constants/data";
 import type { BrandMarkProps } from "@/constants/types";
+import { businessInfo } from "@/constants/data/reusable";
 
 export default function BrandMark({ tone = "dark" }: BrandMarkProps) {
   return (

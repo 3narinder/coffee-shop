@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import usePrefersReducedMotion from "@/components/animation/usePrefersReducedMotion";
-import { businessInfo } from "@/constants/data";
+
 import {
   shutterBottomVariants,
   shutterTopVariants,
 } from "@/animations/variants";
+import { businessInfo } from "@/constants/data/reusable";
 
 export default function IntroShutter() {
   const [isComplete, setIsComplete] = useState(false);

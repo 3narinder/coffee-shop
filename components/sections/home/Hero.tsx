@@ -1,6 +1,9 @@
 import Image from "next/image";
+
+import { businessInfo, pageImages } from "@/constants/data/reusable";
+import { homePageContent } from "@/constants/data/home";
+
 import RevealSection from "@/components/animation/RevealSection";
-import { businessInfo, homePageContent, pageImages } from "@/constants/data";
 import HeroBean from "@/components/ui/HeroBean";
 
 const Hero = () => {
@@ -122,9 +125,7 @@ const Hero = () => {
             <p className="home-hero-meta-label text-green">
               {homePageContent.hero.addressLabel}
             </p>
-            <p className="home-hero-meta-value">
-              {businessInfo.address}
-            </p>
+            <p className="home-hero-meta-value">{businessInfo.address}</p>
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import HoverScale from "@/components/animation/HoverScale";
 import SectionLayout from "@/components/layout/SectionLayout";
-import { homePageContent, pageImages } from "@/constants/data";
+import { homePageContent } from "@/constants/data/home";
+import { pageImages } from "@/constants/data/reusable";
 
 const { homeGallery } = pageImages;
 
@@ -13,9 +14,7 @@ const Gallery = () => {
           <div className="relative grid h-min w-full flex-none grid-cols-2 grid-rows-[144px] auto-rows-36 justify-center gap-4 p-0 tablet:grid-rows-[208px] tablet:auto-rows-52 desktop:grid-cols-4 desktop:grid-rows-[336px] desktop:auto-rows-84">
             {/* image 1 */}
             <div className="home-gallery__frame group relative col-span-2 h-full w-full flex-none place-self-start overflow-clip rounded-xl desktop:col-span-2 desktop:row-start-1">
-              <HoverScale
-                className="absolute inset-0 h-full w-full"
-              >
+              <HoverScale className="absolute inset-0 h-full w-full">
                 <Image
                   src={homeGallery.image1}
                   width={1400}
@@ -28,9 +27,7 @@ const Gallery = () => {
 
             {/* Image 2 */}
             <div className="home-gallery__frame group relative col-span-2 h-full w-full flex-none place-self-start overflow-clip rounded-xl desktop:col-span-2 desktop:row-start-1">
-              <HoverScale
-                className="absolute inset-0 h-full w-full"
-              >
+              <HoverScale className="absolute inset-0 h-full w-full">
                 <Image
                   src={homeGallery.image2}
                   width={1400}
@@ -43,9 +40,7 @@ const Gallery = () => {
 
             {/* Image 3 */}
             <div className="home-gallery__frame group relative col-start-1 row-start-3 h-full w-full flex-none place-self-start overflow-clip rounded-xl desktop:col-start-1 desktop:row-start-2">
-              <HoverScale
-                className="absolute inset-0 h-full w-full"
-              >
+              <HoverScale className="absolute inset-0 h-full w-full">
                 <Image
                   src={homeGallery.image3}
                   width={1400}
@@ -58,9 +53,7 @@ const Gallery = () => {
 
             {/* Image 4 */}
             <div className="home-gallery__frame group relative col-span-2 row-start-4 h-full w-full flex-none place-self-start overflow-clip rounded-xl desktop:col-span-2 desktop:row-start-2">
-              <HoverScale
-                className="absolute inset-0 h-full w-full"
-              >
+              <HoverScale className="absolute inset-0 h-full w-full">
                 <Image
                   src={homeGallery.image4}
                   width={1400}
@@ -73,9 +66,7 @@ const Gallery = () => {
 
             {/* Image 5 */}
             <div className="home-gallery__frame group relative col-start-2 row-start-3 h-full w-full flex-none place-self-start overflow-clip rounded-xl desktop:col-start-4 desktop:row-start-2">
-              <HoverScale
-                className="absolute inset-0 h-full w-full"
-              >
+              <HoverScale className="absolute inset-0 h-full w-full">
                 <Image
                   src={homeGallery.image5}
                   width={1400}
@@ -102,7 +93,7 @@ const Gallery = () => {
       </div>
 
       {/* Decorative image */}
-      <div className="pointer-events-none absolute z-0 hidden h-[263px] w-[416px] -bottom-[100px] -left-[158px] translate-y-[-77.03px] rotate-[-20deg] tablet:flex">
+      <div className="pointer-events-none absolute z-0 hidden h-65.75 w-104 -bottom-25 -left-39.5 translate-y-[-77.03px] rotate-[-20deg] tablet:flex">
         <Image
           src={homeGallery.beanGroup}
           alt={homePageContent.gallery.decorativeImageAlt}

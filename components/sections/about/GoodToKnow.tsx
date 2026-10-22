@@ -1,6 +1,6 @@
 import SectionLayout from "@/components/layout/SectionLayout";
 import FAQItem from "@/components/ui/FAQItem";
-import { aboutPageContent } from "@/constants/data";
+import { aboutPageContent } from "@/constants/data/about";
 
 const GoodToKnow = () => {
   return (

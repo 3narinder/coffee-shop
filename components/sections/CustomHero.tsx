@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { pageImages } from "@/constants/data";
+import { pageImages } from "@/constants/data/reusable";
 import SectionLayout from "@/components/layout/SectionLayout";
 import type { CustomHeroProps } from "@/constants/types";
 

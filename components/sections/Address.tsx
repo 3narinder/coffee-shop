@@ -1,6 +1,6 @@
 import { MapPin, Clock, Phone } from "lucide-react";
 
-import { businessInfo, reusableContent } from "@/constants/data";
+import { businessInfo, reusableContent } from "@/constants/data/reusable";
 import SectionLayout from "../layout/SectionLayout";
 import ContactCard from "../ui/ContactCard";
 

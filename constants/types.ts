@@ -50,8 +50,34 @@ export type MenuSectionProps = {
 export type MenuCategoryData = {
   id: string;
   title: string;
-  description: string;
+  description?: string;
   items: MenuItemData[];
+};
+
+export type MenuGroupData = {
+  id: string;
+  title: string;
+  description: string;
+  categories: MenuCategoryData[];
+};
+
+export type MenuPageContent = {
+  metadata: {
+    title: string;
+    description: string;
+  };
+  hero: {
+    subtitle: string;
+    title: string;
+    description: string;
+    decorativeImages: DecorativeImage[];
+  };
+  navigation: {
+    ariaLabel: string;
+    selectLabel: string;
+    placeholder: string;
+  };
+  groups: MenuGroupData[];
 };
 
 export type MenuNavItem = {
@@ -279,4 +305,12 @@ export type ContactFormCopy = {
   unknownError: string;
   requestError: string;
   contactHeading: string;
+};
+
+export type ContactInfoItem = {
+  label: string;
+  value: string;
+  icon: ReactNode;
+  href?: string;
+  external?: boolean;
 };

@@ -1,12 +1,11 @@
-import { menuPageContent } from "@/constants/data";
-
 import CustomHero from "@/components/sections/CustomHero";
 import MenuNav from "@/components/sections/menu/MenuNav";
-import MenuSection from "@/components/ui/MenuSection";
 import MenuBanner from "@/components/sections/menu/MenuBanner";
+import MenuSection from "@/components/ui/MenuSection";
 import Testimony from "@/components/sections/Testimoney";
 import Address from "@/components/sections/Address";
 import type { Metadata } from "next";
+import { menuPageContent } from "@/constants/data/menu";
 
 export const metadata: Metadata = {
   title: menuPageContent.metadata.title,
@@ -25,20 +24,23 @@ export default function MenuPage() {
 
       <MenuNav />
 
-      {menuPageContent.sections.map((section) => (
-        <div key={section.id} className="flex w-full flex-col">
-          <MenuBanner
-            title={section.title}
-            description={section.description}
-          />
-          <MenuSection
-            id={section.id}
-            title={section.title}
-            description={section.description}
-            items={section.items}
-            columns={2}
-            paddingClassName="py-16 tablet:py-20 desktop:py-20"
-          />
+      {menuPageContent.groups.map((group) => (
+        <div key={group.id} className="flex w-full flex-col">
+          {/* Group banner: Bar, Kitchen, Bakery */}
+          <MenuBanner title={group.title} description={group.description} />
+
+          {/* Render each category within the group */}
+          {group.categories.map((category) => (
+            <MenuSection
+              key={category.id}
+              id={category.id}
+              title={category.title}
+              description={category.description}
+              items={category.items}
+              columns={2}
+              paddingClassName="py-16 tablet:py-20 desktop:py-20"
+            />
+          ))}
         </div>
       ))}
 

@@ -9,7 +9,7 @@ import { PiFacebookLogo } from "react-icons/pi";
 import { TbBrandTiktok } from "react-icons/tb";
 
 import BrandMark from "@/components/layout/BrandMark";
-import { businessInfo, reusableContent } from "@/constants/data";
+import { businessInfo, reusableContent } from "@/constants/data/reusable";
 
 const socialIcons = {
   Instagram: LuInstagram,
@@ -48,17 +48,17 @@ export default function NavBar() {
             const Icon = socialIcons[label as keyof typeof socialIcons];
 
             return (
-            <li key={label}>
-              <Link
-                href={href}
-                aria-label={label}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-green text-cream transition-colors hover:bg-green-soft"
-              >
-                <Icon className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </li>
+              <li key={label}>
+                <Link
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-green text-cream transition-colors hover:bg-green-soft"
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </li>
             );
           })}
         </ul>
@@ -98,40 +98,42 @@ export default function NavBar() {
         >
           <div className="relative mx-auto flex h-min w-full min-w-0 max-w-368 flex-col items-start gap-10 p-6 tablet:p-8">
             <ul className="relative flex h-min w-full flex-col gap-1">
-              {reusableContent.primaryNavigation.map(({ label, href }, index) => {
-                const number = String(index + 1).padStart(2, "0");
+              {reusableContent.primaryNavigation.map(
+                ({ label, href }, index) => {
+                  const number = String(index + 1).padStart(2, "0");
 
-                return (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    aria-current={pathname === href ? "page" : undefined}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-end gap-3"
-                  >
-                    <span
-                      className={`text-[10px] font-normal leading-[1.4em] ${
-                        pathname === href
-                          ? "text-green"
-                          : "text-green-muted hover:text-green"
-                      }`}
-                    >
-                      {number}
-                    </span>
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        aria-current={pathname === href ? "page" : undefined}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex items-end gap-3"
+                      >
+                        <span
+                          className={`text-[10px] font-normal leading-[1.4em] ${
+                            pathname === href
+                              ? "text-green"
+                              : "text-green-muted hover:text-green"
+                          }`}
+                        >
+                          {number}
+                        </span>
 
-                    <span
-                      className={`text-3xl font-extrabold uppercase leading-[1.05em] tracking-[-0.02em] ${
-                        pathname === href
-                          ? "text-green"
-                          : "text-green-muted hover:text-green"
-                      }`}
-                    >
-                      {label}
-                    </span>
-                  </Link>
-                </li>
-                );
-              })}
+                        <span
+                          className={`text-3xl font-extrabold uppercase leading-[1.05em] tracking-[-0.02em] ${
+                            pathname === href
+                              ? "text-green"
+                              : "text-green-muted hover:text-green"
+                          }`}
+                        >
+                          {label}
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                },
+              )}
             </ul>
 
             <div className="flex items-end justify-between w-full pt-5 border-t border-green/15">

@@ -1,5 +1,6 @@
 import MenuSection from "@/components/ui/MenuSection";
-import { exploreMenuItems, homePageContent, pageImages } from "@/constants/data";
+import { exploreMenuItems, homePageContent } from "@/constants/data/home";
+import { pageImages } from "@/constants/data/reusable";
 
 const ExploreMenu = () => {
   return (

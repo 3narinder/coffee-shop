@@ -9,15 +9,15 @@ const MenuItem = ({ item, href = "/" }: MenuItemProps) => {
   return (
     <Link
       href={href}
-      className="relative flex h-min cursor-pointer items-start gap-5"
+      className="relative flex flex-row items-center justify-center h-min cursor-pointer gap-5"
     >
-      <div className="relative flex aspect-square h-auto w-15 shrink-0 flex-col items-center overflow-visible">
-        <div className="aspect-[0.97/1] h-auto w-full">
+      <div className="relative flex aspect-square h-auto w-15 shrink-0 flex-col items-center justify-center overflow-visible">
+        <div className="h-auto w-full">
           <Image
             src={item.image}
             alt={item.imageAlt}
-            width={100}
-            height={100}
+            width={80}
+            height={80}
             className="block h-full w-full object-cover object-center"
           />
         </div>

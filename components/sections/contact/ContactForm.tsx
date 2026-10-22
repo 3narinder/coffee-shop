@@ -2,17 +2,42 @@
 
 import { useRef, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-import { Clock3, MapPin, Phone } from "lucide-react";
+import { Clock3, Mail, MapPin, Phone } from "lucide-react";
 
 import RevealSection from "@/components/animation/RevealSection";
 import FormField from "./FormField";
 import FormSelect from "./FormSelect";
-import {
-  businessInfo,
-  contactPageContent,
-  contactTopics,
-} from "@/constants/data";
-import type { ContactFormData } from "@/constants/types";
+import { contactPageContent, contactTopics } from "@/constants/data/contact";
+import type { ContactFormData, ContactInfoItem } from "@/constants/types";
+import { businessInfo } from "@/constants/data/reusable";
+import ContactInfo from "./ContactInfo";
+
+const contactInfoItems: ContactInfoItem[] = [
+  {
+    label: contactPageContent.findUs.addressLabel,
+    value: businessInfo.address,
+    href: businessInfo.mapUrl,
+    external: true,
+    icon: <MapPin size={18} aria-hidden="true" />,
+  },
+  {
+    label: contactPageContent.findUs.phoneLabel,
+    value: businessInfo.phone,
+    href: `tel:${businessInfo.phone.replace(/[^\d+]/g, "")}`,
+    icon: <Phone size={18} aria-hidden="true" />,
+  },
+  {
+    label: contactPageContent.findUs.hoursLabel,
+    value: businessInfo.openingHoursShort,
+    icon: <Clock3 size={18} aria-hidden="true" />,
+  },
+  {
+    label: contactPageContent.findUs.email,
+    value: businessInfo.email,
+    href: `mailto:${businessInfo.email}`,
+    icon: <Mail size={18} aria-hidden="true" />,
+  },
+];
 
 const formCopy = contactPageContent.form;
 
@@ -36,9 +61,7 @@ export async function submitContactForm(data: ContactFormData) {
   const result = await response.json().catch(() => null);
 
   if (!response.ok) {
-    throw new Error(
-      result?.error || formCopy.requestError,
-    );
+    throw new Error(result?.error || formCopy.requestError);
   }
 
   return result;
@@ -108,11 +131,7 @@ const ContactForm = () => {
       form.reset();
     } catch (error) {
       setIsSent(false);
-      setStatus(
-        error instanceof Error
-          ? error.message
-          : formCopy.unknownError,
-      );
+      setStatus(error instanceof Error ? error.message : formCopy.unknownError);
     } finally {
       setIsSubmitting(false);
     }
@@ -225,79 +244,7 @@ const ContactForm = () => {
         </form>
 
         {/* Contact details */}
-        <div className="relative flex h-min w-full flex-none flex-col items-start justify-start gap-7 rounded-4xl bg-green p-8 tablet:w-104">
-          <h2
-            className="uppercase font-onest text-xl font-extrabold text-cream leading-[1.05em] tracking-[-0.02em]
-          "
-          >
-            {formCopy.contactHeading}
-          </h2>
-          <address className="flex w-full flex-col gap-6 not-italic">
-            <div className="flex items-start gap-4 text-cream">
-              <MapPin
-                size={20}
-                aria-hidden="true"
-                className="mt-0.5 shrink-0"
-              />
-              <div className="flex flex-col gap-1">
-                <span className="font-onest text-xs font-semibold uppercase tracking-[0.12em] text-cream/70">
-                  {contactPageContent.findUs.addressLabel}
-                </span>
-                <a
-                  href={businessInfo.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-onest text-sm leading-relaxed underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cream"
-                >
-                  {businessInfo.address}
-                </a>
-                <a
-                  href={businessInfo.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 w-fit font-onest text-sm font-semibold underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cream"
-                >
-                  {contactPageContent.findUs.directionsLabel}
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 text-cream">
-              <Phone
-                size={20}
-                aria-hidden="true"
-                className="mt-0.5 shrink-0"
-              />
-              <div className="flex flex-col gap-1">
-                <span className="font-onest text-xs font-semibold uppercase tracking-[0.12em] text-cream/70">
-                  {contactPageContent.findUs.phoneLabel}
-                </span>
-                <a
-                  href={businessInfo.phoneLink}
-                  className="font-onest text-sm leading-relaxed underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cream"
-                >
-                  {businessInfo.phone}
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 text-cream">
-              <Clock3
-                size={20}
-                aria-hidden="true"
-                className="mt-0.5 shrink-0"
-              />
-              <div className="flex flex-col gap-1">
-                <span className="font-onest text-xs font-semibold uppercase tracking-[0.12em] text-cream/70">
-                  {contactPageContent.findUs.hoursLabel}
-                </span>
-                <span className="font-onest text-sm leading-relaxed">
-                  {businessInfo.openingHours}
-                </span>
-              </div>
-            </div>
-          </address>
-        </div>
+        <ContactInfo title={formCopy.contactHeading} items={contactInfoItems} />
       </div>
     </RevealSection>
   );

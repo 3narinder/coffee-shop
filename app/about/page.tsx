@@ -4,7 +4,7 @@ import Stats from "@/components/sections/about/Stats";
 import CustomHero from "@/components/sections/CustomHero";
 import CallOutBand from "@/components/ui/CallOutBand";
 import StorySection from "@/components/ui/StorySection";
-import { aboutPageContent } from "@/constants/data";
+import { aboutPageContent } from "@/constants/data/about";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

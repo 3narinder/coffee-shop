@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import SectionLayout from "@/components/layout/SectionLayout";
-import { homePageContent, testimonials } from "@/constants/data";
+import { testimonials } from "@/constants/data/reusable";
 import TestimonialCard from "@/components/ui/TestimonialCard";
+import { homePageContent } from "@/constants/data/home";
 
 const Testimony = () => {
   const carouselRef = useRef<HTMLDivElement>(null);

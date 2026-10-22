@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { pageImages } from "@/constants/data";
+
 import type { SectionHeadingProps } from "@/constants/types";
+import { pageImages } from "@/constants/data/reusable";
 
 const SectionHeading = ({
   title,

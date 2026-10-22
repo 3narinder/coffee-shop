@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Oswald, Onest } from "next/font/google";
-import { businessInfo } from "@/constants/data";
 import "./globals.css";
 
 import Footer from "@/components/layout/Footer";
 import IntroShutter from "@/components/layout/IntroShutter";
 import NavBar from "@/components/layout/NavBar";
+import { businessInfo } from "@/constants/data/reusable";
 
 const oswald = Oswald({
   subsets: ["latin"],

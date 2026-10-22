@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PolicyPage from "@/components/sections/legal/PolicyPage";
-import { privacyPageContent } from "@/constants/data";
+import { privacyPageContent } from "@/constants/data/reusable";
 
 export const metadata: Metadata = {
   title: privacyPageContent.title,

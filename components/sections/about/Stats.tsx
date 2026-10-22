@@ -1,4 +1,4 @@
-import { aboutPageContent } from "@/constants/data";
+import { aboutPageContent } from "@/constants/data/about";
 import StatCard from "./StatCard";
 
 const Stats = () => {

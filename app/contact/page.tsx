@@ -2,7 +2,7 @@ import GoodToKnow from "@/components/sections/about/GoodToKnow";
 import Address from "@/components/sections/Address";
 import ContactForm from "@/components/sections/contact/ContactForm";
 import CustomHero from "@/components/sections/CustomHero";
-import { contactPageContent } from "@/constants/data";
+import { contactPageContent } from "@/constants/data/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

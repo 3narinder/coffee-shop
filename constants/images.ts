@@ -1,3 +1,7 @@
+// ***************
+//*  HOME images
+// ***************
+
 export const homeHero = {
   bean_image_1: "/home/heroBeans/bean-image-1.avif",
   bean_image_2: "/home/heroBeans/bean-image-2.avif",
@@ -21,6 +25,11 @@ export const homeSpecial = {
   cookie: "/home/cookie.avif",
   beansGroup: "/home/beans-group.avif",
   nitroColdBrew: "/home/ourSpecial/nitro-cold-brew.avif",
+  homeyLavenderLatte: "/home/ourSpecial/honey-lavender-latte.avif",
+  avocadoToast: "/home/ourSpecial/avocado-toast.avif",
+  cloudMatcha: "/home/ourSpecial/cloud-matcha.avif",
+  loxBagel: "/home/ourSpecial/lox-bagel.avif",
+  salmonBowl: "/home/ourSpecial/salmon-bowl.avif",
 };
 
 export const homeCallout = {
@@ -30,6 +39,14 @@ export const homeCallout = {
 
 export const homeExplore = {
   napkin: "/home/napkin.avif",
+  brewedCoffee: "/home/explore/brewed-Coffee.avif",
+  coldIce: "/home/explore/cold-ice.avif",
+  espresso: "/home/explore/espresso.avif",
+  juices: "/home/explore/juices.avif",
+  matcha: "/home/explore/matcha.avif",
+  smoothies: "/home/explore/smoothies.avif",
+  tea: "/home/explore/tea.avif",
+  signatureLatte: "/home/explore/signature-latte.avif",
 };
 
 export const homeGallery = {
@@ -41,7 +58,31 @@ export const homeGallery = {
   beanGroup: "/home/beans-group-2.avif",
 };
 
-//* About
+// ***************
+//* Menu Images
+// ***************
+
+export const espresso = {
+  affogato: "/menu/espresso/affogato.avif",
+  caffeLatte: "/menu/espresso/caffe-latte.avif",
+  cappuccino: "/menu/espresso/cappuccino.avif",
+  cartado: "/menu/espresso/cartado.avif",
+  doppio: "/menu/espresso/doppio.avif",
+  espresso: "/menu/espresso/espresso.avif",
+  flatWhite: "/menu/espresso/flat-white.avif",
+  macchiato: "/menu/espresso/macchiato.avif",
+  mocha: "/menu/espresso/mocha.avif",
+};
+
+export const brewedCoffee = {
+  houseDrip: "/menu/brewed/house-drip.avif",
+  americano: "/menu/brewed/americano.avif",
+  chemex: "/menu/brewed/chemex-for-two.avif",
+};
+
+// ***************
+//* About Images
+// ***************
 
 export const aboutSections = {
   ourStory: "/about/aboutStory.avif",

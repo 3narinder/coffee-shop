@@ -5,7 +5,7 @@ import { PiFacebookLogo } from "react-icons/pi";
 import { TbBrandTiktok } from "react-icons/tb";
 
 import BrandMark from "@/components/layout/BrandMark";
-import { businessInfo, reusableContent } from "@/constants/data";
+import { businessInfo, reusableContent } from "@/constants/data/reusable";
 
 const socialIcons = {
   Instagram: LuInstagram,
