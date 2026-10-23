@@ -1,6 +1,5 @@
 import type { Variants } from "framer-motion";
 import {
-  sectionRevealTransition,
   shutterFadeTransition,
   shutterTransition,
 } from "@/animations/transitions";
@@ -34,7 +33,6 @@ export const sectionRevealVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: sectionRevealTransition,
   },
 };
 

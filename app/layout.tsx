@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import IntroShutter from "@/components/layout/IntroShutter";
 import NavBar from "@/components/layout/NavBar";
+import { RouteRevealDelayProvider } from "@/components/animation/RouteRevealDelayProvider";
 import { businessInfo } from "@/constants/data/reusable";
 
 const oswald = Oswald({
@@ -33,11 +34,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${oswald.variable} ${onest.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <IntroShutter />
-        <NavBar />
-
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <RouteRevealDelayProvider>
+          <IntroShutter />
+          <NavBar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </RouteRevealDelayProvider>
       </body>
     </html>
   );

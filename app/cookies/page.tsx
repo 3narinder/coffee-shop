@@ -4,7 +4,7 @@ import { cookiePageContent } from "@/constants/data/reusable";
 
 export const metadata: Metadata = {
   title: cookiePageContent.title,
-  description: cookiePageContent.description,
+  description: cookiePageContent.intro,
 };
 
 export default function CookiePolicyPage() {

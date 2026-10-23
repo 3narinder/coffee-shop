@@ -127,8 +127,8 @@ export type LegalPolicySection = {
 export type LegalPolicyPageData = {
   subtitle: string;
   title: string;
-  description: string;
   lastUpdated: string;
+  intro: string;
   sections: LegalPolicySection[];
 };
 
@@ -151,6 +151,16 @@ export type SectionLayoutProps = {
 };
 
 export type RevealSectionProps = HTMLMotionProps<"section">;
+
+// RouteRevealDelayProvider: navigation callback and reveal state shared by page sections.
+export type RouteRevealDelayContextValue = {
+  delayNextRoute: (href: string) => void;
+  shouldDelayReveal: boolean;
+};
+
+export type RouteRevealDelayProviderProps = {
+  children: ReactNode;
+};
 
 export type HoverScaleProps = {
   children: ReactNode;

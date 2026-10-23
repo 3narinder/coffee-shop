@@ -10,6 +10,7 @@ import { TbBrandTiktok } from "react-icons/tb";
 
 import BrandMark from "@/components/layout/BrandMark";
 import { businessInfo, reusableContent } from "@/constants/data/reusable";
+import { useRouteRevealDelay } from "@/components/animation/RouteRevealDelayProvider";
 
 const socialIcons = {
   Instagram: LuInstagram,
@@ -21,15 +22,23 @@ const socialIcons = {
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { delayNextRoute } = useRouteRevealDelay();
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const navigateFromMenu = (href: string) => {
+    delayNextRoute(href);
+    closeMenu();
+  };
 
   useEffect(() => {
-    if (!isMenuOpen) return;
-
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsMenuOpen(false);
+      if (event.key === "Escape") closeMenu();
     };
 
-    window.addEventListener("keydown", closeOnEscape);
+    if (isMenuOpen) window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [isMenuOpen]);
 
@@ -78,7 +87,13 @@ export default function NavBar() {
           }
           aria-expanded={isMenuOpen}
           aria-controls="site-menu"
-          onClick={() => setIsMenuOpen((open) => !open)}
+          onClick={() => {
+            if (isMenuOpen) {
+              closeMenu();
+            } else {
+              setIsMenuOpen(true);
+            }
+          }}
           className="col-start-3 row-start-1 flex h-12 w-12 items-center justify-center justify-self-end rounded-xl text-green transition-colors hover:bg-green/5"
         >
           {isMenuOpen ? (
@@ -107,7 +122,7 @@ export default function NavBar() {
                       <Link
                         href={href}
                         aria-current={pathname === href ? "page" : undefined}
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => navigateFromMenu(href)}
                         className="flex items-end gap-3"
                       >
                         <span
@@ -155,7 +170,11 @@ export default function NavBar() {
               >
                 {reusableContent.legalNavigation.map(({ label, href }) => (
                   <li key={href}>
-                    <Link href={href} className="text-green-text-muted text-xs">
+                    <Link
+                      href={href}
+                      onClick={() => navigateFromMenu(href)}
+                      className="text-green-text-muted text-xs"
+                    >
                       {label}
                     </Link>
                   </li>

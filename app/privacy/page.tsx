@@ -4,7 +4,7 @@ import { privacyPageContent } from "@/constants/data/reusable";
 
 export const metadata: Metadata = {
   title: privacyPageContent.title,
-  description: privacyPageContent.description,
+  description: privacyPageContent.intro,
 };
 
 export default function PrivacyPage() {

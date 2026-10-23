@@ -81,22 +81,25 @@ const ContactForm = () => {
     values.topic !== "" &&
     values.message.trim().length > 0;
 
-  const handleChange = (event: ChangeEvent<HTMLFormElement>) => {
+  const updateField = (name: string, value: string) => {
+    setValues((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+
+    setStatus("");
+    setIsSent(false);
+  };
+
+  const handleFieldChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    updateField(event.target.name, event.target.value);
+  };
+
+  const handleTopicChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const target = event.target;
-
-    if (
-      target instanceof HTMLInputElement ||
-      target instanceof HTMLTextAreaElement ||
-      target instanceof HTMLSelectElement
-    ) {
-      setValues((previous) => ({
-        ...previous,
-        [target.name]: target.value,
-      }));
-
-      setStatus("");
-      setIsSent(false);
-    }
+    updateField(target.name, target.value);
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -144,7 +147,6 @@ const ContactForm = () => {
         <form
           ref={formRef}
           noValidate
-          onChange={handleChange}
           onSubmit={handleSubmit}
           className="grid h-min min-w-0 flex-1 grid-cols-1 items-start gap-5 tablet:grid-cols-2"
         >
@@ -156,6 +158,7 @@ const ContactForm = () => {
             placeholder={formCopy.placeholders.name}
             autoComplete="name"
             value={values.name}
+            onChange={handleFieldChange}
             required
           />
 
@@ -167,6 +170,7 @@ const ContactForm = () => {
             placeholder={formCopy.placeholders.email}
             autoComplete="email"
             value={values.email}
+            onChange={handleFieldChange}
             required
           />
 
@@ -176,6 +180,7 @@ const ContactForm = () => {
             name="topic"
             options={contactTopics}
             value={values.topic}
+            onChange={handleTopicChange}
             required
             className="tablet:col-span-2"
           />
@@ -188,6 +193,7 @@ const ContactForm = () => {
             placeholder={formCopy.placeholders.message}
             rows={5}
             value={values.message}
+            onChange={handleFieldChange}
             required
             className="tablet:col-span-2"
           />

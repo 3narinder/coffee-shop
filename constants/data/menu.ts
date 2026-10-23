@@ -31,15 +31,6 @@ export const espressoItems: MenuItemData[] = [
     imageAlt: "Macchiato coffee",
   },
   {
-    id: "macchiato",
-    type: "price",
-    name: "macchiato",
-    price: "$4.25",
-    description: "Espresso marked with a spoonful of steamed milk foam.",
-    image: espresso.macchiato,
-    imageAlt: "Macchiato coffee",
-  },
-  {
     id: "Cartado",
     type: "price",
     name: "Cartado",
@@ -148,6 +139,8 @@ export const brewedCoffeeItems: MenuItemData[] = [
     imageAlt: "Americano Coffee",
   },
 ];
+
+export const coldBrewAndIced: MenuItemData[] = [];
 
 export const teaItems: MenuItemData[] = [];
 export const juiceItems: MenuItemData[] = [];

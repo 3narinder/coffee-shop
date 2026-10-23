@@ -128,54 +128,83 @@ const policyLastUpdated = "October 21, 2026";
 export const termsPageContent: LegalPolicyPageData = {
   subtitle: "Legal",
   title: "Terms & Conditions",
-  description:
-    "Please read these terms before using the Common Grounds website or placing an order.",
   lastUpdated: policyLastUpdated,
+  intro:
+    "These terms govern your use of the Common Grounds website and the services we offer at our Midtown Manhattan location. By browsing this site or ordering from us, you agree to what follows.",
   sections: [
     {
-      id: "using-this-site",
-      title: "Using this site",
+      id: "Acceptance-of-these-terms",
+      title: "Acceptance of these terms",
       paragraphs: [
-        "This website shares information about Common Grounds, our menu, location, and ways to get in touch. By using it, you agree to use the site lawfully and respectfully.",
-        "We may update, change, or remove website content at any time. Menu items, ingredients, prices, and availability can change; please confirm current details with our team before ordering.",
+        "By accessing this website you confirm that you accept these terms and agree to comply with them. If you do not agree, please do not use the site.",
+        "We may revise these terms at any time. The version published here is the one that applies, and the “last updated” date above tells you when it last changed.",
       ],
     },
     {
-      id: "orders-and-availability",
-      title: "Orders and availability",
+      id: "menu-pricing-and-availability",
+      title: "Menu, pricing and availability",
       paragraphs: [
-        "Any menu information shown here is for general guidance. An item being listed online does not guarantee it is available at a particular time or location.",
-        "If online ordering is offered through a separate service, that service may have its own terms and checkout conditions. Please review those terms before completing an order.",
+        "Menu items, prices and photographs on this site are provided for information. Availability changes daily with what we are able to source, and prices shown in US dollars may be adjusted without notice.",
+        "Where an item on the site differs from what is offered in the shop, the in-store menu takes precedence. Prices shown exclude applicable New York State and City sales tax unless stated otherwise.",
       ],
     },
     {
-      id: "allergens-and-dietary-needs",
-      title: "Allergens and dietary needs",
+      id: "orders-and-payment",
+      title: "Orders and payment",
       paragraphs: [
-        "Ingredients and preparation methods may change, and our kitchen handles a range of ingredients. We cannot guarantee that any item is free from allergens or cross-contact.",
-        "Please speak with a team member about ingredients and dietary needs before placing your order. Do not rely solely on information displayed on this website.",
+        "Orders placed in person, by phone or through our mobile ordering partner are confirmed when we accept them. We may decline an order where an item is unavailable, where we suspect fraud, or where we cannot fulfill it safely.",
+        "Payment is due at the time of service unless we have agreed otherwise in writing, such as for a catering account.",
+      ],
+    },
+    {
+      id: "catering-orders",
+      title: "Catering orders",
+      paragraphs: [
+        "Catering orders require at least 24 hours notice and are confirmed only once we have acknowledged them in writing. Cancellations made less than 12 hours before the delivery window may be charged in full",
+      ],
+    },
+    {
+      id: "allergens-and-dietary-information",
+      title: "Allergens and dietary information",
+      paragraphs: [
+        "Our kitchen handles peanuts, tree nuts, dairy, wheat, eggs, soy, fish, shellfish and sesame. We take care to describe our food accurately, but we cannot guarantee that any item is free from traces of an allergen.",
+        "If you have a food allergy or intolerance, tell a member of our team before ordering so we can advise you properly.",
       ],
     },
     {
       id: "intellectual-property",
-      title: "Website content",
+      title: "Intellectual property",
       paragraphs: [
-        "The text, design, and other materials on this website are provided for personal, informational use. Do not reproduce or reuse site materials in a way that misrepresents Common Grounds or violates another person's rights.",
+        "All content on this site — including the Common Grounds name, logo, photography, illustrations and written copy — belongs to us or is used with permission. You may not reproduce it commercially without our written consent.",
       ],
     },
     {
-      id: "third-party-services",
-      title: "Third-party services",
+      id: "conduct-in-our-shop",
+      title: "Conduct in our shop",
       paragraphs: [
-        "This website may link to third-party services, such as map providers or social networks. Those services operate independently and their own terms and privacy practices apply.",
+        "We ask every guest to treat our team and other guests with respect. We reserve the right to refuse service to anyone behaving abusively, unsafely, or in a way that disrupts other guests.",
       ],
     },
     {
-      id: "limitation-and-contact",
-      title: "Updates and contact",
+      id: "disclaimer-and-limitation-of-liability",
+      title: "Disclaimer and limitation of liability",
       paragraphs: [
-        "We aim to keep website information current but do not promise that every page is complete, accurate, or available at all times. Nothing in these terms limits rights that cannot lawfully be limited.",
-        "Questions about these terms? Contact Common Grounds at 112 W 44th St, New York, NY 10036, or call (212) 555-0148.",
+        "We provide this website on an “as is” and “as available” basis, without warranties of any kind, express or implied, to the fullest extent permitted by law.",
+        "To the fullest extent permitted by law, we are not liable for indirect, incidental or consequential damages arising from your use of the site. Nothing in these terms limits liability that cannot lawfully be excluded, including for personal injury caused by our negligence.",
+      ],
+    },
+    {
+      id: "governing-law",
+      title: "Governing law",
+      paragraphs: [
+        "These terms are governed by the laws of the State of New York, without regard to its conflict of law rules. Any dispute will be brought exclusively in the state or federal courts located in New York County, New York.",
+      ],
+    },
+    {
+      id: "contact",
+      title: "Contact",
+      paragraphs: [
+        "Questions about these terms can go to hello@commongroundsnyc.com or (212) 555-0148, or you can simply ask us at the counter.",
       ],
     },
   ],
@@ -184,9 +213,9 @@ export const termsPageContent: LegalPolicyPageData = {
 export const privacyPageContent: LegalPolicyPageData = {
   subtitle: "Legal",
   title: "Privacy Policy",
-  description:
-    "This policy explains what information may be collected when you visit or contact Common Grounds through this website.",
   lastUpdated: policyLastUpdated,
+  intro:
+    "These terms govern your use of the Common Grounds website and the services we offer at our Midtown Manhattan location. By browsing this site or ordering from us, you agree to what follows.",
   sections: [
     {
       id: "information-you-provide",
@@ -245,9 +274,9 @@ export const privacyPageContent: LegalPolicyPageData = {
 export const cookiePageContent: LegalPolicyPageData = {
   subtitle: "Legal",
   title: "Cookie Policy",
-  description:
-    "Learn what cookies are and how browser settings can help you manage them when visiting this website.",
   lastUpdated: policyLastUpdated,
+  intro:
+    "These terms govern your use of the Common Grounds website and the services we offer at our Midtown Manhattan location. By browsing this site or ordering from us, you agree to what follows.",
   sections: [
     {
       id: "what-cookies-are",

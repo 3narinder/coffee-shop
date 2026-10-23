@@ -1,44 +1,54 @@
 import type { PolicyPageProps } from "@/constants/types";
 import { reusableContent } from "@/constants/data/reusable";
 import CustomHero from "@/components/sections/CustomHero";
+import SectionLayout from "@/components/layout/SectionLayout";
 
 export default function PolicyPage({ page }: PolicyPageProps) {
   return (
     <>
-      <CustomHero
-        subTitle={page.subtitle}
-        title={page.title}
-        description={page.description}
-      />
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-5 pb-14 tablet:px-8 tablet:pb-20">
-        <p className="mt-4 font-onest text-sm text-green-text-muted">
-          {reusableContent.policyUpdatedLabel} <time>{page.lastUpdated}</time>
-        </p>
+      <CustomHero subTitle={page.subtitle} title={page.title} />
 
-        <div className="grid w-full gap-10 desktop:grid-cols-[16rem_minmax(0,1fr)]">
-          <nav
-            aria-label={`On this page: ${page.title}`}
-            className="h-fit rounded-2xl border border-green-wash bg-cream-deep p-6 desktop:sticky desktop:top-28"
-          >
-            <h2 className="mb-4 font-oswald text-lg font-semibold uppercase tracking-wide text-green">
-              {reusableContent.policyNavigationHeading}
-            </h2>
-            <ol className="flex flex-col gap-3">
-              {page.sections.map((section) => (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    className="font-onest text-sm leading-relaxed text-green-text-muted underline-offset-4 hover:text-green hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green"
-                  >
-                    {section.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
+      <SectionLayout paddingClassName="py-14 tablet:py-20">
+        <div className="relative mx-auto flex w-full flex-col items-start justify-start gap-10 px-5 tablet:px-8 desktop:flex-row desktop:gap-16">
+          {/* Aside navigation */}
+          <aside className="desktop:flex h-min w-full flex-none flex-col items-start gap-8 hidden desktop:sticky desktop:top-28 desktop:w-64">
+            <div className="flex flex-col gap-1 items-start justify-start w-full h-min">
+              <p className="font-onest text-xs text-[#0e4a2b80] uppercase font-semibold leading-[1.4em] tracking-[0.16em]">
+                {reusableContent.policyUpdatedLabel}{" "}
+              </p>
 
-          <article className="flex min-w-0 flex-col gap-10">
-            {page.sections.map((section) => (
+              <div className="font-onest text-sm text-[#0e4a2bbf] font-medium leading-[1.625em] tracking-[-0.02em]">
+                <time>{page.lastUpdated}</time>
+              </div>
+            </div>
+
+            <nav aria-label={`On this page: ${page.title}`}>
+              <h3 className="mb-4 font-onest text-xs font-semibold uppercase tracking-[0.16em] leading-[1.4em] text-[#0e4a2b80] ">
+                {reusableContent.policyNavigationHeading}
+              </h3>
+              <ol className="flex flex-col gap-2">
+                {page.sections.map((section, index) => (
+                  <li key={section.id}>
+                    <a
+                      href={`#${section.id}`}
+                      className="font-onest text-sm leading-relaxed text-green-text-muted underline-offset-4 hover:text-green hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green"
+                    >
+                      <span className="">{String(index + 1)}.</span>
+                      {section.title}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          </aside>
+
+          {/* policies */}
+          <div className="flex min-w-[320px] max-w-3xl grow flex-col items-start justify-start gap-10">
+            {/* Intro */}
+            {page.intro && <p className="paragraph text-left">{page.intro}</p>}
+
+            {/* Policy sections */}
+            {page.sections.map((section, index) => (
               <section
                 key={section.id}
                 id={section.id}
@@ -47,29 +57,23 @@ export default function PolicyPage({ page }: PolicyPageProps) {
               >
                 <h2
                   id={`${section.id}-heading`}
-                  className="font-oswald text-2xl font-semibold uppercase leading-tight text-green tablet:text-3xl"
+                  className="font-onest text-green text-2xl leading-[1.2] font-extrabold uppercase"
                 >
-                  {section.title}
+                  <span className="">{String(index + 1)}</span>.{section.title}
                 </h2>
+
                 <div className="mt-4 flex flex-col gap-4">
                   {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph} className="paragraph text-left">
+                    <p key={paragraph} className="body-small text-left">
                       {paragraph}
                     </p>
                   ))}
                 </div>
-                {section.bullets && (
-                  <ul className="mt-4 list-disc space-y-2 pl-6 font-onest text-base leading-8 text-green-text-muted">
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                )}
               </section>
             ))}
-          </article>
+          </div>
         </div>
-      </div>
+      </SectionLayout>
     </>
   );
 }
