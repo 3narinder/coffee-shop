@@ -11,6 +11,8 @@ import { contactPageContent, contactTopics } from "@/constants/data/contact";
 import type { ContactFormData, ContactInfoItem } from "@/constants/types";
 import { businessInfo } from "@/constants/data/reusable";
 import ContactInfo from "./ContactInfo";
+import Image from "next/image";
+import { homeGallery } from "@/constants/images";
 
 const contactInfoItems: ContactInfoItem[] = [
   {
@@ -142,13 +144,23 @@ const ContactForm = () => {
 
   return (
     <RevealSection className="relative z-10 flex w-full flex-col items-center overflow-x-clip scroll-mt-24 py-14 tablet:py-20">
-      <div className="z-10 flex h-min w-full max-w-6xl flex-wrap items-start justify-start gap-10 px-5 tablet:gap-14 tablet:px-8">
+      <div className="relative flex w-full flex-col items-start gap-10 px-5 tablet:gap-12 tablet:px-8 desktop:flex-row desktop:justify-between desktop:gap-12 max-w-6xl">
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <Image
+            src={homeGallery.beanGroup}
+            alt=""
+            aria-hidden="true"
+            width={320}
+            height={203}
+            className="hidden tablet:block absolute -bottom-34 -left-47 h-48 w-76 -rotate-12 object-contain mix-blend-multiply"
+          />
+        </div>
         {/* Contact form */}
         <form
           ref={formRef}
           noValidate
           onSubmit={handleSubmit}
-          className="grid h-min min-w-0 flex-1 grid-cols-1 items-start gap-5 tablet:grid-cols-2"
+          className="relative z-10 grid h-min w-full min-w-0 grid-cols-1 items-start gap-5 tablet:grid-cols-2 desktop:flex-1"
         >
           {/* Name */}
           <FormField
@@ -250,7 +262,12 @@ const ContactForm = () => {
         </form>
 
         {/* Contact details */}
-        <ContactInfo title={formCopy.contactHeading} items={contactInfoItems} />
+        <div className="relative z-10 w-full min-w-0 desktop:w-104 desktop:shrink-0">
+          <ContactInfo
+            title={formCopy.contactHeading}
+            items={contactInfoItems}
+          />
+        </div>
       </div>
     </RevealSection>
   );

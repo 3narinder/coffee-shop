@@ -96,5 +96,8 @@ export const coldBrewedIce = {
 // ***************
 
 export const aboutSections = {
-  ourStory: "/about/aboutStory.avif",
+  ourStory: "/about/story1.avif",
+  ourStory2: "/about/story2.avif",
+  banner1: "/about/banner1.avif",
+  banner2: "/about/banner2.avif",
 };

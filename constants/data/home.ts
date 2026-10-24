@@ -1,4 +1,4 @@
-import { homeExplore, homeSpecial } from "../images";
+import { homeCallout, homeExplore, homeSpecial } from "../images";
 import { MenuItemData } from "../types";
 import { businessInfo } from "./reusable";
 
@@ -8,14 +8,14 @@ export const homePageContent = {
     headingLines: ["A Great morning", "starts with"],
     hoursLabel: "Opening Hours",
     addressLabel: "Find us at",
-    imageAlt: "A freshly prepared coffee at Common Grounds",
+    imageAlt: "A freshly prepared coffee at Ember & Oak",
     beanAlt: "Decorative coffee bean",
   },
   story: {
     title: "our story",
     imageAlt: "Black coffee cup and plate",
     description:
-      "Common Grounds opened in 2016 in a narrow storefront on West 44th, with a short menu, a second-hand grinder and a stubborn belief that Midtown deserved better than a paper cup of scorched drip. The first week we sold three hundred cups, mostly to people on their way to Grand Central. What kept us open was the ones who came back on a Saturday, when they had nowhere in particular to be. We added breakfast because guests were staying through the morning, and bowls because they were staying through lunch. The kitchen has been running open to close ever since.",
+      "Ember & Oak opened in 2016 in a narrow storefront on West 44th, with a short menu, a second-hand grinder and a stubborn belief that Midtown deserved better than a paper cup of scorched drip. The first week we sold three hundred cups, mostly to people on their way to Grand Central. What kept us open was the ones who came back on a Saturday, when they had nowhere in particular to be. We added breakfast because guests were staying through the morning, and bowls because they were staying through lunch. The kitchen has been running open to close ever since.",
   },
   specials: {
     title: "our specials",
@@ -29,9 +29,15 @@ export const homePageContent = {
     headingLines: ["Coffee and breakfast,", "At your Local favorite"],
     buttonLabel: "View menu",
     buttonHref: "/menu",
-    imageAlts: [
-      "Coffee and breakfast at Common Grounds",
-      "A table at Common Grounds",
+    images: [
+      {
+        src: homeCallout.homeCallout1,
+        alt: "Coffee and breakfast at Ember & Oak",
+      },
+      {
+        src: homeCallout.homeCallout2,
+        alt: "A table at Ember & Oak",
+      },
     ],
   },
   exploreMenu: {
@@ -45,7 +51,7 @@ export const homePageContent = {
   gallery: {
     heading: "A taste you'll want to share",
     imageAlts: [
-      "A coffee and pastry at Common Grounds",
+      "A coffee and pastry at Ember & Oak",
       "Coffee being prepared at the bar",
       "A table set for breakfast",
       "Freshly made food from the kitchen",
@@ -61,6 +67,11 @@ export const homePageContent = {
     previousLabel: "Previous testimonials",
     nextLabel: "Next testimonials",
     regionLabel: "Guest reviews carousel",
+  },
+  address: {
+    title: "Find Ember & Oak",
+    description:
+      "One room on West 44th, half a block from Bryant Park. Walk in, or find us from the address below.",
   },
   footerDescription: businessInfo.description,
 };

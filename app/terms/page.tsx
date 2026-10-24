@@ -4,6 +4,7 @@ import { termsPageContent } from "@/constants/data/reusable";
 
 export const metadata: Metadata = {
   title: termsPageContent.title,
+  description: termsPageContent.intro,
 };
 
 export default function TermsPage() {

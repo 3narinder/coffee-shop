@@ -28,7 +28,7 @@ export const pageImages = {
 
 // Shared business details: reused by the hero, address cards, contact page, and footer.
 export const businessInfo = {
-  name: "Common Grounds",
+  name: "Ember & Oak",
   brandDescriptor: "Coffee Co.",
   description:
     "Coffee, breakfast and a place to sit, seven days a week on West 44th.",
@@ -41,15 +41,12 @@ export const businessInfo = {
   openingHoursShort: "7 AM – 8 PM",
   pageTitle: "Coffee, breakfast and sweets in Midtown Manhattan",
   pageDescription:
-    "Coffee, breakfast and a place to sit, seven days a week on West 44th. Visit Common Grounds in Midtown Manhattan.",
+    "Coffee, breakfast and a place to sit, seven days a week on West 44th. Visit Ember & Oak in Midtown Manhattan.",
 };
 
 // Reusable content: shared address labels, navigation, and footer links.
 export const reusableContent = {
   visit: {
-    title: "Find common grounds",
-    description:
-      "One room on West 44th, half a block from Bryant Park. Walk in, or find us from the address below.",
     addressLabel: "Address",
     phoneLabel: "Call us at",
     hoursLabel: "Open daily",
@@ -130,7 +127,7 @@ export const termsPageContent: LegalPolicyPageData = {
   title: "Terms & Conditions",
   lastUpdated: policyLastUpdated,
   intro:
-    "These terms govern your use of the Common Grounds website and the services we offer at our Midtown Manhattan location. By browsing this site or ordering from us, you agree to what follows.",
+    "These terms govern your use of the Ember & Oak website and the services we offer at our Midtown Manhattan location. By browsing this site or ordering from us, you agree to what follows.",
   sections: [
     {
       id: "Acceptance-of-these-terms",
@@ -175,7 +172,7 @@ export const termsPageContent: LegalPolicyPageData = {
       id: "intellectual-property",
       title: "Intellectual property",
       paragraphs: [
-        "All content on this site — including the Common Grounds name, logo, photography, illustrations and written copy — belongs to us or is used with permission. You may not reproduce it commercially without our written consent.",
+        "All content on this site — including the Ember & Oak name, logo, photography, illustrations and written copy — belongs to us or is used with permission. You may not reproduce it commercially without our written consent.",
       ],
     },
     {
@@ -204,7 +201,7 @@ export const termsPageContent: LegalPolicyPageData = {
       id: "contact",
       title: "Contact",
       paragraphs: [
-        "Questions about these terms can go to hello@commongroundsnyc.com or (212) 555-0148, or you can simply ask us at the counter.",
+        "Questions about these terms? Please use the contact details on our Contact page.",
       ],
     },
   ],
@@ -215,7 +212,7 @@ export const privacyPageContent: LegalPolicyPageData = {
   title: "Privacy Policy",
   lastUpdated: policyLastUpdated,
   intro:
-    "These terms govern your use of the Common Grounds website and the services we offer at our Midtown Manhattan location. By browsing this site or ordering from us, you agree to what follows.",
+    "This Privacy Policy describes how information may be collected and used when you visit the Ember & Oak website or contact us.",
   sections: [
     {
       id: "information-you-provide",
@@ -265,7 +262,7 @@ export const privacyPageContent: LegalPolicyPageData = {
       id: "privacy-contact",
       title: "Contact",
       paragraphs: [
-        "For privacy questions, contact Common Grounds at 112 W 44th St, New York, NY 10036, or call (212) 555-0148.",
+        "For privacy questions, please use the contact details on our Contact page.",
       ],
     },
   ],
@@ -276,7 +273,7 @@ export const cookiePageContent: LegalPolicyPageData = {
   title: "Cookie Policy",
   lastUpdated: policyLastUpdated,
   intro:
-    "These terms govern your use of the Common Grounds website and the services we offer at our Midtown Manhattan location. By browsing this site or ordering from us, you agree to what follows.",
+    "This Cookie Policy describes how this website uses cookies and similar storage technologies, as well as the browser controls available to visitors.",
   sections: [
     {
       id: "what-cookies-are",
@@ -311,7 +308,7 @@ export const cookiePageContent: LegalPolicyPageData = {
       id: "cookie-policy-contact",
       title: "Contact and updates",
       paragraphs: [
-        "For questions about this policy, contact Common Grounds at 112 W 44th St, New York, NY 10036, or call (212) 555-0148. We may update this page if our use of cookies changes.",
+        "For questions about this policy, please use the contact details on our Contact page. We may update this page if our use of cookies changes.",
       ],
     },
   ],

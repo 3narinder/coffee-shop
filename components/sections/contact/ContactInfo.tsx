@@ -22,7 +22,7 @@ const socialIcons = {
 const ContactInfo = ({ title, items, className = "" }: ContactInfoProps) => {
   return (
     <div
-      className={`relative flex h-min w-full flex-none flex-col items-start justify-start gap-7 rounded-4xl bg-green p-6 tablet:w-104 tablet:p-8 ${className}`}
+      className={`relative flex h-min flex-none flex-col items-start justify-start gap-7 rounded-4xl bg-green p-6 desktop:w-104 w-full tablet:p-8 ${className}`}
     >
       {title && (
         <h2 className="font-onest text-xl font-extrabold uppercase leading-[1.05em] tracking-[-0.02em] text-cream">

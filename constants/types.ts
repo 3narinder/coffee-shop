@@ -77,6 +77,10 @@ export type MenuPageContent = {
     selectLabel: string;
     placeholder: string;
   };
+  address: {
+    title: string;
+    description: string;
+  };
   groups: MenuGroupData[];
 };
 
@@ -325,3 +329,17 @@ export type ContactInfoItem = {
   href?: string;
   external?: boolean;
 };
+
+export interface CallOutBandContent {
+  headingLines: string[];
+  buttonLabel: string;
+  buttonHref: string;
+  images: {
+    src: string | StaticImageData;
+    alt: string;
+  }[];
+}
+
+export interface CallOutBandProps {
+  content: CallOutBandContent;
+}

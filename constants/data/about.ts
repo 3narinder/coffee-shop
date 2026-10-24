@@ -24,14 +24,15 @@ export const aboutPageContent = {
       },
     ],
   },
+
   stories: [
     {
       image: aboutSections.ourStory,
-      imageAlt: "The Common Grounds coffee shop",
+      imageAlt: "The Ember & Oak coffee shop",
       subheading: "Our Story",
       heading: "It started with one espresso machine",
       paragraphs: [
-        "Common Grounds opened in 2016 in a narrow storefront on West 44th with a short menu, a second-hand grinder and a stubborn belief that Midtown deserved better than a paper cup of scorched drip.",
+        "Ember & Oak opened in 2016 in a narrow storefront on West 44th with a short menu, a second-hand grinder and a stubborn belief that Midtown deserved better than a paper cup of scorched drip.",
         "The first week we sold three hundred cups, mostly to people on their way to Grand Central. What kept us open was the ones who came back on a Saturday, when they had nowhere to be.",
         "We added breakfast because guests were staying through the morning, and bowls because they were staying through lunch. The kitchen has been running open to close ever since.",
       ],
@@ -45,8 +46,8 @@ export const aboutPageContent = {
       ],
     },
     {
-      image: aboutSections.ourStory,
-      imageAlt: "Coffee prepared at Common Grounds",
+      image: aboutSections.ourStory2,
+      imageAlt: "Coffee prepared at Ember & Oak",
       subheading: "Our Philosophy",
       heading: "Good coffee brings people together",
       reverseOnDesktop: true,
@@ -63,6 +64,21 @@ export const aboutPageContent = {
       ],
     },
   ] satisfies StorySectionData[],
+  callout: {
+    headingLines: ["Come see the room,", "for yourself"],
+    buttonLabel: "Find us",
+    buttonHref: "/contact",
+    images: [
+      {
+        src: aboutSections.banner1,
+        alt: "Coffee and breakfast at Ember & Oak",
+      },
+      {
+        src: aboutSections.banner2,
+        alt: "A table at Ember & Oak",
+      },
+    ],
+  },
   stats: [
     { stat: "100+", content: "Menu items" },
     { stat: "13H", content: "Open every day" },

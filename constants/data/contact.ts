@@ -73,6 +73,8 @@ export const contactPageContent = {
     contactHeading: "Find us",
   } satisfies ContactFormCopy,
   findUs: {
+    title: "How to get here",
+    description: "Open every day. Weekends from 8 AM.",
     addressLabel: "address",
     phoneLabel: "Call us at",
     hoursLabel: "Open daily",

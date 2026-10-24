@@ -1,20 +1,46 @@
 import { MapPin, Clock, Phone } from "lucide-react";
-
 import { businessInfo, reusableContent } from "@/constants/data/reusable";
 import SectionLayout from "../layout/SectionLayout";
 import ContactCard from "../ui/ContactCard";
+import { DecorativeImage } from "@/constants/types";
+import Image from "next/image";
 
-const Address = () => {
+interface AddressProps {
+  title: string;
+  description: string;
+  decorativeImages?: DecorativeImage[];
+}
+
+const Address = ({
+  title,
+  description,
+  decorativeImages = [],
+}: AddressProps) => {
   const { visit } = reusableContent;
 
   return (
     <SectionLayout
       id="address"
-      title={visit.title}
-      description={visit.description}
+      title={title}
+      description={description}
       contentClassName="max-w-6xl"
       className="px-6 tablet:px-8"
     >
+      {decorativeImages.map((image, index) => (
+        <div
+          key={`${image.className}-${index}`}
+          className={`pointer-events-none absolute z-0 ${image.className} mix-blend-multiply`}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt ?? ""}
+            width={image.width ?? 300}
+            height={image.height ?? 300}
+            className="h-auto w-full object-contain"
+          />
+        </div>
+      ))}
+
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 pt-4 tablet:grid-cols-3">
         <ContactCard
           icon={<MapPin size={18} strokeWidth={1.8} />}

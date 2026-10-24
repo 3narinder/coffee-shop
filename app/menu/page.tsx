@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default function MenuPage() {
+  const { title: addressTitle, description: addressDescription } =
+    menuPageContent.address;
+
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center overflow-x-clip">
       <CustomHero
@@ -46,7 +49,7 @@ export default function MenuPage() {
 
       <Testimony />
 
-      <Address />
+      <Address title={addressTitle} description={addressDescription} />
     </div>
   );
 }

@@ -302,7 +302,7 @@ export const menuPageContent: MenuPageContent = {
   metadata: {
     title: "Menu",
     description:
-      "Explore coffee, breakfast, and kitchen favorites at Common Grounds in Midtown Manhattan.",
+      "Explore coffee, breakfast, and kitchen favorites at Ember & Oak in Midtown Manhattan.",
   },
 
   hero: {
@@ -354,6 +354,12 @@ export const menuPageContent: MenuPageContent = {
     ariaLabel: "Jump to menu category",
     selectLabel: "Jump to a menu",
     placeholder: "Jump to a category",
+  },
+
+  address: {
+    title: "Come find us",
+    description:
+      "Drop by Ember & Oak for your next coffee and something good from the kitchen.",
   },
 
   groups: [

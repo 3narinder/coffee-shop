@@ -5,6 +5,7 @@ import CustomHero from "@/components/sections/CustomHero";
 import CallOutBand from "@/components/ui/CallOutBand";
 import StorySection from "@/components/ui/StorySection";
 import { aboutPageContent } from "@/constants/data/about";
+import { homeExplore } from "@/constants/images";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,8 +28,15 @@ export default function AboutPage() {
         <StorySection key={story.heading} {...story} />
       ))}
 
-      <CallOutBand />
-      <OurStand />
+      <CallOutBand content={aboutPageContent.callout} />
+      <OurStand
+        image={{
+          src: homeExplore.napkin,
+          alt: "Our stand decorative image",
+          className:
+            "hidden tablet:block will-change-transform opacity-100 pointer-events-none z-0 absolute w-64 h-64.75 -bottom-9.25 -left-24 translate-y-[68.12px] rotate-[-45deg]",
+        }}
+      />
       <GoodToKnow />
     </div>
   );

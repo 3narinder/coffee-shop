@@ -7,18 +7,20 @@ import Story from "@/components/sections/home/Story";
 import Testimony from "@/components/sections/Testimoney";
 
 import CallOutBand from "@/components/ui/CallOutBand";
+import { homePageContent } from "@/constants/data/home";
 
 export default function HomePage() {
+  const { title, description } = homePageContent.address;
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center overflow-x-clip">
       <Hero />
       <Story />
       <Special />
-      <CallOutBand />
+      <CallOutBand content={homePageContent.callout} />
       <ExploreMenu />
       <Gallery />
       <Testimony />
-      <Address />
+      <Address title={title} description={description} />
     </div>
   );
 }

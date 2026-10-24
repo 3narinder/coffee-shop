@@ -32,7 +32,7 @@ const StorySection = ({
         <div className="relative flex h-min w-full flex-none flex-col items-start justify-start gap-10 desktop:grid desktop:grid-cols-[repeat(2,minmax(380px,1fr))] desktop:grid-rows-[min-content] desktop:auto-rows-min desktop:justify-center desktop:gap-14">
           {/* Image */}
           <div
-            className={`relative h-96.75 w-full flex-none self-center overflow-clip rounded-4xl desktop:my-auto ${
+            className={`relative desktop:h-96.75 h-140 w-full flex-none self-center overflow-clip rounded-4xl desktop:my-auto ${
               reverseOnDesktop ? "desktop:order-1" : "desktop:order-2"
             }`}
           >

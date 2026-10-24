@@ -1,7 +1,7 @@
-# Common Grounds Web App Replication Guide
+# Ember & Oak Web App Replication Guide
 
 This guide records the visual system and component structure used to recreate
-the Common Grounds reference in this Next.js app. Use it as a repeatable
+the Ember & Oak reference in this Next.js app. Use it as a repeatable
 workflow when building the remaining pages or applying the same approach to
 another web app.
 
