@@ -8,10 +8,26 @@ const StorySection = ({
   subheading,
   heading,
   paragraphs,
+  decorativeImages = [],
   reverseOnDesktop = false,
 }: StorySectionProps) => {
   return (
     <RevealSection className="relative z-10 flex w-full flex-col items-center overflow-x-clip scroll-mt-24 py-16 tablet:py-28 desktop:py-28">
+      {/* Decorative images */}
+      {decorativeImages.map((image, index) => (
+        <div
+          key={index}
+          className={`pointer-events-none absolute z-0 ${image.className} mix-blend-multiply`}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt ?? ""}
+            width={image.width ?? 300}
+            height={image.height ?? 300}
+            className="h-auto w-full object-contain"
+          />
+        </div>
+      ))}
       <div className="z-10 flex h-min w-full max-w-6xl flex-col items-center px-5 tablet:px-8">
         <div className="relative flex h-min w-full flex-none flex-col items-start justify-start gap-10 desktop:grid desktop:grid-cols-[repeat(2,minmax(380px,1fr))] desktop:grid-rows-[min-content] desktop:auto-rows-min desktop:justify-center desktop:gap-14">
           {/* Image */}

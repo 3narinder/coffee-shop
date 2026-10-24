@@ -97,6 +97,7 @@ export type StorySectionData = {
   subheading: string;
   heading: string;
   paragraphs: string[];
+  decorativeImages?: DecorativeImage[];
   reverseOnDesktop?: boolean;
 };
 

@@ -9,7 +9,10 @@ import {
   useState,
 } from "react";
 import { usePathname } from "next/navigation";
-import { sectionRevealDuration } from "@/animations/transitions";
+import {
+  routeRevealDelay,
+  routeRevealTransitionDuration,
+} from "@/animations/transitions";
 import type {
   RouteRevealDelayContextValue,
   RouteRevealDelayProviderProps,
@@ -30,7 +33,7 @@ export function RouteRevealDelayProvider({
 
     const timeout = window.setTimeout(
       () => setTargetPath(null),
-      sectionRevealDuration * 2 * 1000,
+      (routeRevealDelay + routeRevealTransitionDuration) * 1000,
     );
 
     return () => window.clearTimeout(timeout);

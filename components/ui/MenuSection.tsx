@@ -50,7 +50,11 @@ const MenuSection = ({
 
         {button && (
           <div className="relative flex h-min w-full items-center justify-center pt-12">
-            <Button label={button.label} href={button.href} />
+            <Button
+              className="hover:bg-green hover:text-cream"
+              label={button.label}
+              href={button.href}
+            />
           </div>
         )}
       </div>

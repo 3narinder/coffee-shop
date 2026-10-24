@@ -1,9 +1,16 @@
 import type { Transition } from "framer-motion";
 
 export const sectionRevealDuration = 0.85;
+export const routeRevealDelay = 0.12;
+export const routeRevealTransitionDuration = 0.55;
 
 export const sectionRevealTransition: Transition = {
   duration: sectionRevealDuration,
+  ease: [0.22, 1, 0.36, 1],
+};
+
+export const routeRevealTransition: Transition = {
+  duration: routeRevealTransitionDuration,
   ease: [0.22, 1, 0.36, 1],
 };
 

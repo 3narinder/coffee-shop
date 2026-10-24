@@ -17,6 +17,7 @@ export default function ContactPage() {
         subTitle={contactPageContent.hero.subtitle}
         title={contactPageContent.hero.title}
         description={contactPageContent.hero.description}
+        decorativeImages={contactPageContent.hero.decorativeImages}
       />
 
       <ContactForm />

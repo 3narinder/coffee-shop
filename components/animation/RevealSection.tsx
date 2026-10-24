@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import {
-  sectionRevealDuration,
+  routeRevealDelay,
+  routeRevealTransition,
   sectionRevealTransition,
 } from "@/animations/transitions";
 import { sectionRevealVariants } from "@/animations/variants";
@@ -28,8 +29,10 @@ export default function RevealSection({
         reduceMotion
           ? { duration: 0 }
           : {
-              ...sectionRevealTransition,
-              delay: shouldDelayReveal ? sectionRevealDuration : 0,
+              ...(shouldDelayReveal
+                ? routeRevealTransition
+                : sectionRevealTransition),
+              delay: shouldDelayReveal ? routeRevealDelay : 0,
             }
       }
       viewport={{ once: true, amount: 0.08 }}

@@ -33,6 +33,7 @@ const MenuNav = () => {
             key={section.id}
             label={section.label}
             href={`#${section.id}`}
+            className="hover:bg-green hover:text-cream"
           />
         ))}
       </div>

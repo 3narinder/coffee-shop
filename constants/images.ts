@@ -80,6 +80,17 @@ export const brewedCoffee = {
   chemex: "/menu/brewed/chemex-for-two.avif",
 };
 
+export const coldBrewedIce = {
+  nitroColdBrew: "/home/ourSpecial/nitro-cold-brew.avif",
+  coldBrew: "/menu/coldBrewIce/cold-brew.avif",
+  iceLatte: "/menu/coldBrewIce/ice-latte.avif",
+  icedAmericano: "/menu/coldBrewIce/iced-americano.avif",
+  icedMocha: "/menu/coldBrewIce/iced-mocha.avif",
+  shakerato: "/menu/coldBrewIce/shakerato.avif",
+  espressoTonic: "/menu/coldBrewIce/espresso-tonic.avif",
+  vietnameseIcedCoffee: "/menu/coldBrewIce/vietnamese-iced-coffee.avif",
+};
+
 // ***************
 //* About Images
 // ***************

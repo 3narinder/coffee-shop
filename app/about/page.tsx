@@ -19,6 +19,7 @@ export default function AboutPage() {
         subTitle={aboutPageContent.hero.subtitle}
         title={aboutPageContent.hero.title}
         description={aboutPageContent.hero.description}
+        decorativeImages={aboutPageContent.hero.decorativeImages}
         component={<Stats />}
       />
 

@@ -1,4 +1,4 @@
-import { aboutSections } from "../images";
+import { aboutSections, homeGallery, homeSpecial, homeStory } from "../images";
 import { FAQData, StandValueData, StatData, StorySectionData } from "../types";
 
 // About page: hero, story sections, values, statistics, and FAQs.
@@ -11,6 +11,18 @@ export const aboutPageContent = {
     title: "more than coffee",
     description:
       "A neighborhood coffee shop and kitchen on West 44th, open from 7 AM and built for staying a while.",
+    decorativeImages: [
+      {
+        src: homeStory.BlackCoffeeCupPlate,
+        alt: "Decorative black coffee cup ",
+        className: "tablet:flex hidden w-64 h-64 top-27.5 -left-23.75 ",
+      },
+      {
+        src: homeSpecial.cookie,
+        alt: "Decorative cookie",
+        className: "tablet:flex hidden w-52 h-52 -bottom-14.5 -right-21.75",
+      },
+    ],
   },
   stories: [
     {
@@ -19,9 +31,17 @@ export const aboutPageContent = {
       subheading: "Our Story",
       heading: "It started with one espresso machine",
       paragraphs: [
-        "Common Grounds opened in 2016 in a narrow storefront on West 44th with a short menu and a second-hand grinder.",
-        "We believed Midtown deserved better coffee, thoughtfully sourced beans, and carefully crafted drinks.",
-        "That small beginning became a neighborhood gathering place built around quality and connection.",
+        "Common Grounds opened in 2016 in a narrow storefront on West 44th with a short menu, a second-hand grinder and a stubborn belief that Midtown deserved better than a paper cup of scorched drip.",
+        "The first week we sold three hundred cups, mostly to people on their way to Grand Central. What kept us open was the ones who came back on a Saturday, when they had nowhere to be.",
+        "We added breakfast because guests were staying through the morning, and bowls because they were staying through lunch. The kitchen has been running open to close ever since.",
+      ],
+      decorativeImages: [
+        {
+          src: homeGallery.beanGroup,
+          alt: "Decorative coffee group",
+          className:
+            "tablet:flex hidden w-80 h-50.75 -bottom-22.25 -left-46.75 rotate-[-12deg] ",
+        },
       ],
     },
     {
@@ -31,20 +51,15 @@ export const aboutPageContent = {
       heading: "Good coffee brings people together",
       reverseOnDesktop: true,
       paragraphs: [
-        "Every cup begins with carefully selected beans and a commitment to quality.",
-        "We focus on thoughtful preparation, consistency, and the details that make great coffee special.",
-        "Our goal is simple: to make every visit feel welcoming and every cup worth coming back for.",
+        "Pastries are laminated the night before and baked at five. Bowls are built to order. Our syrups are cooked in house — the lavender is steeped with real wildflower honey, and the brown sugar takes forty minutes on the stove.",
+        "It is slower than the alternative, and it is the entire reason the menu tastes the way it does.",
       ],
-    },
-    {
-      image: aboutSections.ourStory,
-      imageAlt: "The Common Grounds kitchen",
-      subheading: "Our Kitchen",
-      heading: "Made with care, served with care",
-      paragraphs: [
-        "The kitchen opens with the coffee bar and stays busy through breakfast and lunch.",
-        "We prepare each order with fresh ingredients and keep the menu welcoming, familiar, and satisfying.",
-        "Whether you are taking breakfast to go or settling in for a while, there is a place for you here.",
+      decorativeImages: [
+        {
+          src: homeSpecial.nitroColdBrew,
+          alt: "Decorative black coffee cup",
+          className: "tablet:flex hidden w-56 h-57.75 top-16.75 -right-25.25",
+        },
       ],
     },
   ] satisfies StorySectionData[],
